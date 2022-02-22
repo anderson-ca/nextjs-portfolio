@@ -3,6 +3,9 @@ import {
     OrbitControls
 } from "three/examples/jsm/controls/OrbitControls";
 // import * as shader from "./Shaders/Shader";
+import {
+    GLTFLoader
+} from 'three/examples/jsm/loaders/GLTFLoader.js';
 
 export default class Sketch {
     constructor(selector) {
@@ -92,7 +95,38 @@ export default class Sketch {
         this.geometry = new THREE.PlaneGeometry(1, 1, 1, 1);
 
         this.plane = new THREE.Mesh(this.geometry, this.material);
-        this.scene.add(this.plane);
+
+        // let x = null;
+
+        const loader = new GLTFLoader();
+        console.log("my loader here --> ", loader);
+        console.log('my scene ---> ', this.scene);
+        let loader_scene = this.scene
+            // console.log('x marks the spot', x);
+        loader.load('/dog2.glb', function(gltf) {
+            console.log('---> loader running...', loader_scene);
+            console.log('model to be loaded ---> ', gltf.scene);
+            loader_scene.add(gltf.scene);
+        }, undefined, function(error) {
+
+            console.error(error);
+
+        })
+
+        // const fuck = (glb, scene) => {
+        //     console.log("-----> ", glb.scene, this);
+        //     x = glb.scene;
+        //     // this.scene.add(glb.scene);
+
+        // }
+
+        // loader.load('/dog2.glb', fuck(), undefined, function(error) {
+
+        //     console.error(error);
+
+        // });
+        // console.log(x);
+        // this.scene.add(this.plane);
     }
 
     stop() {
