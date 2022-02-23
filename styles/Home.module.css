@@ -1,9 +1,14 @@
 .home {
     background: blue;
+    position: relative;
     height: 98%;
     width: 98%;
     display: flex;
     flex-flow: row;
     justify-content: center;
     align-items: center;
+}
+
+.text_wrapper {
+    background: green;
 }
