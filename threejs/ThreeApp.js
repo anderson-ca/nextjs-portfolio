@@ -9,7 +9,7 @@ import {
 
 export default class Sketch {
     constructor(selector) {
-        console.log(selector);
+        console.log("========>", selector);
         this.scene = new THREE.Scene();
         this.container = selector;
         this.width = this.container.offsetWidth;
@@ -29,6 +29,12 @@ export default class Sketch {
             1000
         );
 
+        const pointLight = new THREE.PointLight(0xffffff, 0.8)
+        pointLight.position.x = 2
+        pointLight.position.y = 3
+        pointLight.position.z = 4
+        this.scene.add(pointLight)
+
         // var frustumSize = 10;
         // var aspect = window.innerWidth / window.innerHeight;
         // this.camera = new THREE.OrthographicCamera( frustumSize * aspect / - 2, frustumSize * aspect / 2, frustumSize / 2, frustumSize / - 2, -1000, 1000 );
@@ -38,7 +44,8 @@ export default class Sketch {
 
         this.isPlaying = true;
 
-        this.addObjects();
+        // this.addObjects();
+        this.addDog();
         this.resize();
         this.render();
         this.setupResize();
@@ -68,65 +75,65 @@ export default class Sketch {
 
     addObjects() {
         let that = this;
-        this.material = new THREE.ShaderMaterial({
-            extensions: {
-                derivatives: "#extension GL_OES_standard_derivatives : enable",
-            },
-            side: THREE.DoubleSide,
-            uniforms: {
-                time: {
-                    type: "f",
-                    value: 0
-                },
-                resolution: {
-                    type: "v4",
-                    value: new THREE.Vector4()
-                },
-                uvRate1: {
-                    value: new THREE.Vector2(1, 1),
-                },
-            },
-            // wireframe: true,
-            // transparent: true,
-            // vertexShader: shader.vertex,
-            // fragmentShader: shader.fragment,
-        });
+        // this.material = new THREE.ShaderMaterial({
+        //     extensions: {
+        //         derivatives: "#extension GL_OES_standard_derivatives : enable",
+        //     },
+        //     side: THREE.DoubleSide,
+        //     uniforms: {
+        //         time: {
+        //             type: "f",
+        //             value: 0
+        //         },
+        //         resolution: {
+        //             type: "v4",
+        //             value: new THREE.Vector4()
+        //         },
+        //         uvRate1: {
+        //             value: new THREE.Vector2(1, 1),
+        //         },
+        //     },
+        //     // wireframe: true,
+        //     // transparent: true,
+        //     // vertexShader: shader.vertex,
+        //     // fragmentShader: shader.fragment,
+        // });
 
-        this.geometry = new THREE.PlaneGeometry(1, 1, 1, 1);
+        // this.geometry = new THREE.PlaneGeometry(1, 1, 1, 1)
+        // this.plane = new THREE.Mesh(this.geometry, this.material);
 
-        this.plane = new THREE.Mesh(this.geometry, this.material);
-
-        // let x = null;
-
-        const loader = new GLTFLoader();
-        console.log("my loader here --> ", loader);
-        console.log('my scene ---> ', this.scene);
-        let loader_scene = this.scene
-            // console.log('x marks the spot', x);
-        loader.load('/dog2.glb', function(gltf) {
-            console.log('---> loader running...', loader_scene);
-            console.log('model to be loaded ---> ', gltf.scene);
-            loader_scene.add(gltf.scene);
-        }, undefined, function(error) {
-
-            console.error(error);
-
-        })
-
-        // const fuck = (glb, scene) => {
-        //     console.log("-----> ", glb.scene, this);
-        //     x = glb.scene;
-        //     // this.scene.add(glb.scene);
-
-        // }
-
-        // loader.load('/dog2.glb', fuck(), undefined, function(error) {
+        // const loader = new GLTFLoader();
+        // // console.log("my loader here --> ", loader);
+        // // console.log('my scene ---> ', this.scene);
+        // let loader_scene = this.scene
+        //     // console.log('x marks the spot', x);
+        // loader.load('/dog2.glb', function(gltf) {
+        //     // console.log('---> loader running...', loader_scene);
+        //     // console.log('model to be loaded ---> ', gltf.scene);
+        //     loader_scene.add(gltf.scene);
+        // }, undefined, function(error) {
 
         //     console.error(error);
 
-        // });
-        // console.log(x);
-        // this.scene.add(this.plane);
+        // })
+
+    }
+
+    addDog() {
+        const loader = new GLTFLoader();
+        // console.log("my loader here --> ", loader);
+        // console.log('my scene ---> ', this.scene);
+        let loader_scene = this.scene
+            // console.log('x marks the spot', x);
+        loader.load('/dog2.glb', function(gltf) {
+            // console.log('---> loader running', loader_scene);
+            // console.log('model to be loaded ---> ', gltf.scene);
+            loader_scene.add(gltf.scene);
+        }, undefined, function(error) {
+
+            console.error("woof! woof!", error);
+
+        })
     }
 
     stop() {
@@ -143,7 +150,7 @@ export default class Sketch {
     render() {
         if (!this.isPlaying) return;
         this.time += 0.05;
-        this.material.uniforms.time.value = this.time;
+        // this.material.uniforms.time.value = this.time;
         requestAnimationFrame(this.render.bind(this));
         this.renderer.render(this.scene, this.camera);
     }
