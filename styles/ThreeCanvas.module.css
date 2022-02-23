@@ -1,0 +1,8 @@
+.canvas_wrapper {
+    border: solid 4px rgb(255, 0, 212);
+    width: 70%;
+    height: 10rem;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}

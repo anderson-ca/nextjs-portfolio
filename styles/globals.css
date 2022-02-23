@@ -1,15 +1,46 @@
-html,
+:root {
+    --font-size: 1.5rem;
+    --link-color: #000000;
+    --link-hover-color: #000000;
+    --primary-font: 'Yanone Kaffeesatz';
+    --secondary-font: 'Anton', sans-serif;
+    --tertiary-font: 'Shizuru', cursive;
+}
+
+html {
+    box-sizing: border-box;
+}
+
 body {
-    padding: 0;
     margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+    padding: 0;
+}
+
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+h1,
+h2,
+h3,
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
 }
 
 a {
-    color: inherit;
+    color: var(--link-color);
     text-decoration: none;
 }
 
-* {
-    box-sizing: border-box;
+a:hover {
+    color: var(--link-hover-color);
+}
+
+.imageWrapper {
+    width: 100%;
+    margin: 0;
+    padding: 0;
 }
