@@ -9,6 +9,11 @@
     align-items: center;
 }
 
+.home .text_wrapper {
+    border: solid 2px yellow;
+    flex-basis: 40%;
+}
+
 .text_wrapper {
     background: green;
 }

@@ -17,28 +17,29 @@ export default class Sketch {
         this.renderer = new THREE.WebGLRenderer();
         this.renderer.setPixelRatio(window.devicePixelRatio);
         this.renderer.setSize(this.width, this.height);
-        this.renderer.setClearColor(0xeeeeee, 1);
+        this.renderer.setClearColor('#242935', 1);
         this.renderer.outputEncoding = THREE.sRGBEncoding;
 
         this.container.appendChild(this.renderer.domElement);
 
         this.camera = new THREE.PerspectiveCamera(
-            70,
+            120,
             window.innerWidth / window.innerHeight,
-            0.001,
-            1000
+            0.008,
+            2000
         );
 
-        const pointLight = new THREE.PointLight(0xffffff, 0.8)
-        pointLight.position.x = 2
-        pointLight.position.y = 3
-        pointLight.position.z = 4
+        const pointLight = new THREE.PointLight(0xffffff, 0.9)
+        pointLight.position.x = 10
+        pointLight.position.y = 10
+        pointLight.position.z = -10
+        pointLight.position.z = 10
         this.scene.add(pointLight)
 
         // var frustumSize = 10;
         // var aspect = window.innerWidth / window.innerHeight;
         // this.camera = new THREE.OrthographicCamera( frustumSize * aspect / - 2, frustumSize * aspect / 2, frustumSize / 2, frustumSize / - 2, -1000, 1000 );
-        this.camera.position.set(0, 0, 2);
+        this.camera.position.set(3, 3, 2.5);
         this.controls = new OrbitControls(this.camera, this.renderer.domElement);
         this.time = 0;
 
