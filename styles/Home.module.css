@@ -1,19 +1,25 @@
 .home {
     background: rgba(0, 0, 255, 0);
+    /* overflow: hidden; */
     position: relative;
-    height: 98%;
-    width: 98%;
-    display: flex;
+    height: 100%;
+    width: 100%;
+    /* display: flex;
     flex-flow: row;
     justify-content: flex-start;
-    align-items: center;
+    align-items: center; */
 }
 
-.home .text_wrapper {
+
+/* .home .text_wrapper {
     border: solid 2px yellow;
     flex-basis: 35%;
 }
+*/
 
 .text_wrapper {
-    background: rgba(0, 128, 0, 0);
+    background: rgba(255, 255, 255, 0.281);
+    border: solid 2px black;
+    margin-top: 20%;
+    padding: 2rem 5rem;
 }

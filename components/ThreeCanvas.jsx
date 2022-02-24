@@ -6,7 +6,7 @@ const ThreeCanvas = () => {
     const canvas = useThree(ThreeApp);
 
     return (
-        <div ref={canvas} className={styles.canvas_wrapper}>
+        <div ref={canvas} className={styles.canvas}>
         </div>
     );
 }

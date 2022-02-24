@@ -1,9 +1,11 @@
 .container {
-    background: rgba(255, 0, 0, 0);
+    /* overflow: hidden; */
+    /* border: solid 2px red; */
+    background: rgba(189, 253, 86, 0);
     width: 100vw;
     height: 100vh;
-    display: flex;
-    flex-flow: row;
-    align-items: center;
-    justify-content: center;
+    /* max-width: 1500px; */
+    display: grid;
+    grid-template-columns: 10% auto;
+    padding: 0 1rem 1rem 0;
 }

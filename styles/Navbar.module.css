@@ -1,0 +1,17 @@
+.navbar {
+    /* position: fixed; */
+    background: purple;
+    /* height: 100vh; */
+}
+
+.navbar_nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* height: 100%; */
+}
+
+
+/* .navbar .nav_link {
+    background: rgb(255, 0, 255);
+} */
