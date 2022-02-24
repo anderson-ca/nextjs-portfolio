@@ -1,19 +1,19 @@
 .home {
-    background: blue;
+    background: rgba(0, 0, 255, 0);
     position: relative;
     height: 98%;
     width: 98%;
     display: flex;
     flex-flow: row;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
 }
 
 .home .text_wrapper {
     border: solid 2px yellow;
-    flex-basis: 40%;
+    flex-basis: 30%;
 }
 
 .text_wrapper {
-    background: green;
+    background: rgba(0, 128, 0, 0);
 }

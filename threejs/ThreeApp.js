@@ -29,17 +29,16 @@ export default class Sketch {
             2000
         );
 
-        const pointLight = new THREE.PointLight(0xffffff, 0.9)
-        pointLight.position.x = 10
-        pointLight.position.y = 10
-        pointLight.position.z = -10
-        pointLight.position.z = 10
+        const pointLight = new THREE.PointLight(0xffffff, 1.2)
+        pointLight.position.x = -20
+        pointLight.position.y = 20
+        pointLight.position.z = 20
         this.scene.add(pointLight)
 
         // var frustumSize = 10;
         // var aspect = window.innerWidth / window.innerHeight;
         // this.camera = new THREE.OrthographicCamera( frustumSize * aspect / - 2, frustumSize * aspect / 2, frustumSize / 2, frustumSize / - 2, -1000, 1000 );
-        this.camera.position.set(3, 3, 2.5);
+        this.camera.position.set(-3.5, 4.2, 4);
         this.controls = new OrbitControls(this.camera, this.renderer.domElement);
         this.time = 0;
 
