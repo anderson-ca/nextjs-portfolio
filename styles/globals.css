@@ -1,10 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;1,100;1,200;1,300&display=swap');
 :root {
-    --font-size: 1.2rem;
+    --font-size: 1.5rem;
     --primary-font: 'Raleway', sans-serif;
     --black: #000000;
     --grey: #242935;
-    --white: #FFFFFF;
+    --white: #6b6b6b;
+    --text-primary: #b6b6b6;
+    --text-secondary: #ececec;
+    --bg-primary: #23232e;
+    --bg-secondary: #141418;
 }
 
 html {

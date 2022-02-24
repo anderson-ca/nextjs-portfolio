@@ -6,6 +6,6 @@
     height: 100vh;
     /* max-width: 1500px; */
     display: grid;
-    grid-template-columns: 10% auto;
+    grid-template-columns: 5rem auto;
     padding: 0 1rem 1rem 0;
 }

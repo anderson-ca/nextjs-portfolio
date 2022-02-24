@@ -1,5 +1,5 @@
 .canvas {
-    border: solid 2px rgb(255, 0, 212);
+    /* border: solid 2px rgb(255, 0, 212); */
     z-index: -1;
     /* position: absolute; */
     top: 0;

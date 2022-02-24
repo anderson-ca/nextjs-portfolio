@@ -4,42 +4,42 @@ import Link from 'next/link';
 
 const Navbar = () => {
     return (
-        <div className={`${styles.navbar}`}>
-            <ul className={`${styles.navbar_nav}`}>
-                <li>
+        <>
+            <ul className={`${styles.ul}`}>
+                <li className={`${styles.li}`}>
                     <Link href='/' passHref>
                         <a className={`${styles.nav_link}`}>
-                            <span>Logo here</span>
-                            <span><CgBorderLeft /></span>
+                            <span className={`${styles.link_icon}`}><CgBorderLeft /></span>
+                            <span className={`${styles.link_text}`}>Coffe</span>
                         </a>
                     </Link>
                 </li>
-                <li>
+                <li className={`${styles.li}`}>
                     <Link href='/experience' passHref>
                         <a className={`${styles.nav_link}`}>
-                            <span>Experience</span>
-                            <span><CgBorderLeft /></span>
+                            <span className={`${styles.link_icon}`}><CgBorderLeft /></span>
+                            <span className={`${styles.link_text}`}>Experience</span>
                         </a>
                     </Link>
                 </li>
-                <li>
+                <li className={`${styles.li}`}>
                     <Link href='/projects' passHref>
                         <a className={`${styles.nav_link}`}>
-                            <span>Projects</span>
-                            <span><CgBorderLeft /></span>
+                            <span className={`${styles.link_icon}`}><CgBorderLeft /></span>
+                            <span className={`${styles.link_text}`}>Projects</span>
                         </a>
                     </Link>
                 </li>
-                <li>
+                <li className={`${styles.li}`}>
                     <Link href='/about' passHref>
                         <a className={`${styles.nav_link}`}>
-                            <span>About</span>
-                            <span><CgBorderLeft /></span>
+                            <span className={`${styles.link_icon}`}><CgBorderLeft /></span>
+                            <span className={`${styles.link_text}`}>About</span>
                         </a>
                     </Link>
                 </li>
             </ul>
-        </div>
+        </>
     )
 }
 
