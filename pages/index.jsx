@@ -5,10 +5,10 @@ const Home = () => {
 
   return (
     <div className={styles.home}>
-      {/* <div className={`${styles.text_wrapper}`}>
+      <div className={`${styles.text_wrapper}`}>
         <h2>Hello my name is Anderson</h2>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. At ullam vitae cum, officia id?</p>
-      </div> */}
+      </div>
       <ThreeCanvas />
     </div>
   );

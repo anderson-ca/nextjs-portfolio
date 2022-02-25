@@ -11,13 +11,16 @@ export default class Sketch {
     constructor(selector) {
         console.log("========>", selector);
         this.scene = new THREE.Scene();
+        this.scene.background = null;
         this.container = selector;
         this.width = this.container.offsetWidth;
         this.height = this.container.offsetHeight;
-        this.renderer = new THREE.WebGLRenderer();
+        this.renderer = new THREE.WebGLRenderer({
+            alpha: true
+        });
         this.renderer.setPixelRatio(window.devicePixelRatio);
         this.renderer.setSize(this.width, this.height);
-        this.renderer.setClearColor('#242935', 1);
+        // this.renderer.setClearColor('#242935', 1);
         this.renderer.outputEncoding = THREE.sRGBEncoding;
 
         this.container.appendChild(this.renderer.domElement);
