@@ -26,10 +26,10 @@ export default class Sketch {
         this.container.appendChild(this.renderer.domElement);
 
         this.camera = new THREE.PerspectiveCamera(
-            120,
+            100,
             window.innerWidth / window.innerHeight,
-            0.008,
-            2000
+            0.1,
+            100
         );
 
         const pointLight = new THREE.PointLight(0xffffff, 1.2)
@@ -41,15 +41,24 @@ export default class Sketch {
         // var frustumSize = 10;
         // var aspect = window.innerWidth / window.innerHeight;
         // this.camera = new THREE.OrthographicCamera( frustumSize * aspect / - 2, frustumSize * aspect / 2, frustumSize / 2, frustumSize / - 2, -1000, 1000 );
-        this.camera.position.set(-3, 3, 3.3);
+        this.camera.position.set(-2, 8, 5);
         this.controls = new OrbitControls(this.camera, this.renderer.domElement);
         this.time = 0;
+
+        // my code
+        const geometry = new THREE.TorusGeometry(.7, .2, 16, 100);
+        // Materials
+        const material = new THREE.MeshBasicMaterial()
+        material.color = new THREE.Color(0xff0000)
+        this.sphere = new THREE.Mesh(geometry, material)
 
         this.isPlaying = true;
 
         // this.addObjects();
-        this.addDog();
+        // this.addDog();
+        this.addSphere();
         this.resize();
+        // this.play();
         this.render();
         this.setupResize();
         // this.settings();
@@ -122,15 +131,67 @@ export default class Sketch {
 
     }
 
+    addSphere() {
+        // Objects
+
+        this.scene.add(this.sphere)
+        this.sphere.rotation.x
+        console.log("initial position x - ", this.sphere.rotation.x);
+        this.sphere.rotation.x += 10;
+        console.log("secondary position x - ", this.sphere.rotation.x);
+
+        // let stop = 0;
+
+        // while (stop <= 10) {
+        //     this.sphere.rotation.y += 100;
+        //     console.log(stop);
+        //     console.log("secondary position x - ", this.sphere.rotation.y);
+        //     requestAnimationFrame(this.render.bind(this));
+        //     this.renderer.render(this.scene, this.camera);
+        //     stop += 1;
+        // }
+
+        const tick = () => {
+            // console.log("tock", this.sphere);
+            const clock = new THREE.Clock()
+            const elapsedTime = clock.getElapsedTime()
+            this.sphere.rotation.x += .05;
+            console.log("tock", this.sphere.rotation.x);
+            window.requestAnimationFrame(tick)
+        }
+
+        // tick();
+
+
+    }
+
+
+
+    // tick() {
+    //     console.log('tick')
+    //     const clock = new THREE.Clock()
+    //     const elapsedTime = clock.getElapsedTime()
+
+    //     // Update objects
+    //     console.log('my object', this.sphere);
+    //     this.sphere.rotation.x = .5 * elapsedTime
+
+    //     // Update Orbital Controls
+    //     // controls.update()
+
+    //     // Render
+    //     this.renderer.render(this.scene, this.camera)
+
+    //     // Call tick again on the next frame
+    //     window.requestAnimationFrame(this.tick)
+    // }
+
     addDog() {
         const loader = new GLTFLoader();
-        // console.log("my loader here --> ", loader);
-        // console.log('my scene ---> ', this.scene);
         let loader_scene = this.scene
-            // console.log('x marks the spot', x);
+
         loader.load('/dog2.glb', function(gltf) {
-            // console.log('---> loader running', loader_scene);
-            // console.log('model to be loaded ---> ', gltf.scene);
+
             loader_scene.add(gltf.scene);
         }, undefined, function(error) {
 
@@ -139,11 +200,17 @@ export default class Sketch {
         })
     }
 
+    rotateDog() {
+        console.log("starting k9 rotation...");
+        this.play();
+    }
+
     stop() {
         this.isPlaying = false;
     }
 
     play() {
+
         if (!this.isPlaying) {
             this.render();
             this.isPlaying = true;
@@ -152,6 +219,7 @@ export default class Sketch {
 
     render() {
         if (!this.isPlaying) return;
+        // console.log(this.time);
         this.time += 0.05;
         // this.material.uniforms.time.value = this.time;
         requestAnimationFrame(this.render.bind(this));

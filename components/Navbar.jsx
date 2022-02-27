@@ -6,7 +6,7 @@ import Image from 'next/image';
 
 const Navbar = () => {
     return (
-        <>
+        <nav className={`${styles.nav}`}>
             <ul className={`${styles.ul}`}>
                 <li className={`${styles.logo}`}>
                     <Link href='/' passHref>
@@ -40,15 +40,15 @@ const Navbar = () => {
                         </a>
                     </Link>
                 </li>
-                <li className={`${styles.li}`}>
+                {/* <li className={`${styles.li}`}>
                     <Link href='/' passHref>
                         <a className={`${styles.nav_link}`}>
                             <span className={`${styles.link_icon}`}><Image src='/sun.png' alt='rocket icons - two tone' width={'50%'} height={'50%'} /></span>
                         </a>
                     </Link>
-                </li>
+                </li> */}
             </ul>
-        </>
+        </nav>
     )
 }
 

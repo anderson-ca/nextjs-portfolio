@@ -1,21 +1,8 @@
 .home {
     background: rgba(0, 0, 255, 0);
-    /* overflow: hidden; */
-    position: relative;
     height: 100%;
     width: 100%;
-    /* display: flex;
-    flex-flow: row;
-    justify-content: flex-start;
-    align-items: center; */
 }
-
-
-/* .home .text_wrapper {
-    border: solid 2px yellow;
-    flex-basis: 35%;
-}
-*/
 
 .text_wrapper {
     background: rgba(255, 255, 255, 0.281);
