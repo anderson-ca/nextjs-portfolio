@@ -43,7 +43,7 @@ export default class Sketch {
         // this.camera = new THREE.OrthographicCamera( frustumSize * aspect / - 2, frustumSize * aspect / 2, frustumSize / 2, frustumSize / - 2, -1000, 1000 );
         this.camera.position.set(-2, 8, 5);
         this.controls = new OrbitControls(this.camera, this.renderer.domElement);
-        this.time = 0;
+        // this.time = 0;
 
         // my code
         const geometry = new THREE.TorusGeometry(.7, .2, 16, 100);
@@ -52,11 +52,13 @@ export default class Sketch {
         material.color = new THREE.Color(0xff0000)
         this.sphere = new THREE.Mesh(geometry, material)
 
-        this.isPlaying = true;
+
+
+        // this.isPlaying = true;
 
         // this.addObjects();
-        // this.addDog();
-        this.addSphere();
+        this.addDog();
+        // this.addSphere();
         this.resize();
         // this.play();
         this.render();
@@ -139,18 +141,6 @@ export default class Sketch {
         console.log("initial position x - ", this.sphere.rotation.x);
         this.sphere.rotation.x += 10;
         console.log("secondary position x - ", this.sphere.rotation.x);
-
-        // let stop = 0;
-
-        // while (stop <= 10) {
-        //     this.sphere.rotation.y += 100;
-        //     console.log(stop);
-        //     console.log("secondary position x - ", this.sphere.rotation.y);
-        //     requestAnimationFrame(this.render.bind(this));
-        //     this.renderer.render(this.scene, this.camera);
-        //     stop += 1;
-        // }
-
         const tick = () => {
             // console.log("tock", this.sphere);
             const clock = new THREE.Clock()
@@ -187,11 +177,26 @@ export default class Sketch {
     // }
 
     addDog() {
+        // const loader = new GLTFLoader();
+        // let loader_scene = this.scene
+
+        // loader.load('/dog2.glb', function(gltf) {
+
+        //     loader_scene.add(gltf.scene);
+        // }, undefined, function(error) {
+
+        //     console.error("woof! woof!", error);
+
+        // })
+        //dog code
         const loader = new GLTFLoader();
-        let loader_scene = this.scene
+        const loader_scene = this.scene;
+        // let model = new THREE.Object3D();
 
         loader.load('/dog2.glb', function(gltf) {
 
+            // model = gltf.scene;
+            gltf.scene.name = 'dog';
             loader_scene.add(gltf.scene);
         }, undefined, function(error) {
 
@@ -205,23 +210,26 @@ export default class Sketch {
         this.play();
     }
 
-    stop() {
-        this.isPlaying = false;
-    }
+    // stop() {
+    //     this.isPlaying = false;
+    // }
 
-    play() {
-
-        if (!this.isPlaying) {
-            this.render();
-            this.isPlaying = true;
-        }
-    }
+    // play() {
+    //     if (!this.isPlaying) {
+    //         this.render();
+    //         this.isPlaying = true;
+    //     }
+    // }
 
     render() {
-        if (!this.isPlaying) return;
-        // console.log(this.time);
-        this.time += 0.05;
-        // this.material.uniforms.time.value = this.time;
+        let dog = this.scene.getObjectByName('dog');
+        if (dog) {
+            // console.log('here', dog);
+            dog.rotation.y += 0.0010;
+        }
+        console.log('hazaar', dog);
+        const clock = new THREE.Clock()
+        const elapsedTime = clock.getElapsedTime()
         requestAnimationFrame(this.render.bind(this));
         this.renderer.render(this.scene, this.camera);
     }
