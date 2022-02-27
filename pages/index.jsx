@@ -4,11 +4,11 @@ import ThreeCanvas from "../components/ThreeCanvas";
 const Home = () => {
 
   return (
-    <div className={styles.home}>
-      {/* <div className={`${styles.text_wrapper}`}>
-        <h2>Hello my name is Anderson</h2>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. At ullam vitae cum, officia id?</p>
-      </div> */}
+    <div className={styles.hero}>
+      <div className={`${styles.text_wrapper}`}>
+        <h2 className={`${styles.hero_title}`}>Hi, I'm Anderson</h2>
+        <p className={`${styles.hero_subtitle}`}>I'm a creative software developer who loves creating beautiful things on the web 🦴</p>
+      </div>
       <ThreeCanvas />
     </div>
   );

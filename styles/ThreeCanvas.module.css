@@ -6,6 +6,6 @@
     height: 100%;
     /* position: absolute; */
     overflow: hidden;
-    background: rgb(0, 113, 93);
+    background: rgba(0, 113, 92, 0.692);
     background: linear-gradient(326deg, rgba(0, 113, 93, 1) 7%, rgba(49, 201, 174, 1) 53%, rgba(82, 227, 201, 1) 69%, rgba(82, 227, 201, 1) 89%);
 }

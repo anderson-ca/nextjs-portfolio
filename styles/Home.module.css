@@ -1,12 +1,48 @@
-.home {
+.hero {
     background: rgba(0, 0, 255, 0);
+    position: relative;
+    /* pos */
     height: 100%;
     width: 100%;
 }
 
 .text_wrapper {
-    background: rgba(255, 255, 255, 0.281);
-    border: solid 2px black;
-    margin-top: 20%;
+    background: rgba(255, 255, 255, 0.192);
+    height: 100%;
+    width: 100%;
+    /* text-align: left; */
+    display: flex;
+    justify-content: center;
+    flex-flow: column;
+    align-items: center;
+    gap: 22%;
+    z-index: 9;
+    border: solid 1px rgb(255, 1, 1);
+    position: absolute;
+    top: 0;
+    left: 0;
+    /* margin-top: 20%; */
     padding: 2rem 5rem;
+    /* line */
+}
+
+.hero_title {
+    /* border: solid 2px blue; */
+    font-size: 6rem;
+    font-weight: 400;
+    color: rgb(255, 255, 255);
+    letter-spacing: 0.3ch;
+    line-height: 3.2ch;
+    /* padding-bottom: 6rem; */
+}
+
+.hero_subtitle {
+    /* border: solid 2px rgb(255, 0, 234); */
+    color: rgb(58, 57, 57);
+    /* margin-bottom: 10%; */
+    font-weight: 400;
+    font-size: 3rem;
+    letter-spacing: 0.3ch;
+    line-height: 3.2ch;
+    max-width: 60%
 }
