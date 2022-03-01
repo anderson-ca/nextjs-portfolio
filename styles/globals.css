@@ -1,10 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;1,100;1,200&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 :root {
     --font-size: 1.2rem;
+    --primary-font: 'Poppins', sans-serif;
     --secondary-font: 'Space Mono', monospace;
     --black: #1E1C1B;
     --grey: #242935;
-    --white: #6b6b6b;
+    --white: #D9D8D7;
     --text-primary: #b6b6b6;
     --text-secondary: #ececec;
     --bg-primary: #23232e;

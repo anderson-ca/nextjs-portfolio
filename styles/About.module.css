@@ -1,5 +1,50 @@
 .about {
+    display: relative;
     height: 100%;
     width: 100%;
-    background: yellow;
+    background: rgb(73, 43, 109);
+    /* background: linear-gradient(270deg, rgba(73, 43, 109, 1) 1%, rgba(121, 70, 125, 1) 82%, rgba(152, 87, 135, 1) 97%, rgba(129, 74, 128, 1) 100%, rgba(139, 80, 131, 1) 100%, rgba(188, 108, 148, 1) 100%, rgba(214, 123, 157, 1) 100%); */
+    border: solid 2px red;
+    display: flex;
+    /* gap: 2%; */
+    /* padding-top: rem; */
+}
+
+.text_wrapper {
+    /* border: solid 2px rgb(0, 255, 21); */
+    z-index: 9;
+    width: 100vw;
+    height: 20vh;
+    background-color: #78A8D8;
+    padding: 8rem 50vw 0 12rem;
+    color: #78A8D8;
+    font-weight: 400;
+    font-size: 2.2rem;
+    letter-spacing: 0.6ch;
+    line-height: 2.9ch;
+}
+
+.text_bg {
+    /* background: blue; */
+    /* z-index: 10; */
+}
+
+.svg_wrapper {
+    /* border: solid 2px blue; */
+    z-index: 9;
+    position: absolute;
+    top: 0;
+    left: 52%;
+    /* height: 100vh; */
+    width: 45vw;
+    background: rgba(137, 43, 226, 0);
+    text-align: center;
+    padding-top: 4.1rem;
+    /* padding: 20% 40% 0 10%; */
+    /* margin: 8rem 0 0 5rem; */
+}
+
+.svg_wrapper>.svg_body_wrapper {
+    /* border: solid 2px rgb(248, 8, 8); */
+    z-index: 7;
 }

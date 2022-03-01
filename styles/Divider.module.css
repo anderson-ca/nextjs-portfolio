@@ -1,0 +1,31 @@
+.divider_wrapper {
+    position: absolute;
+    /* z-index: 8; */
+    top: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    transform: rotate(180deg);
+    /* line-height: 0; */
+    /* position: absolute; */
+    /* top: 0; */
+    /* left: 0; */
+    /* width: 100%; */
+    /* overflow: hidden; */
+    /* border: solid 2px yellow; */
+    margin-top: 12rem;
+    /* height: 50%; */
+}
+
+.divider_wrapper .svg {
+    position: relative;
+    display: block;
+    width: calc(300% + 1.3px);
+    height: 500px;
+}
+
+.divider_wrapper .shape_fill {
+    fill: #78A8D8;
+    /* z-index: 9; */
+}

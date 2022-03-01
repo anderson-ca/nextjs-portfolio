@@ -14,7 +14,7 @@
     display: flex;
     justify-content: center;
     flex-flow: column;
-    align-items: center;
+    align-items: flex-start;
     gap: 22%;
     z-index: 9;
     border: solid 1px rgb(255, 1, 1);
@@ -22,17 +22,18 @@
     top: 0;
     left: 0;
     /* margin-top: 20%; */
-    padding: 2rem 5rem;
+    padding: 2rem 0 0 20%;
     /* line */
 }
 
 .hero_title {
     /* border: solid 2px blue; */
-    font-size: 6rem;
-    font-weight: 400;
-    color: rgb(255, 255, 255);
+    font-size: 8rem;
+    font-weight: 200;
+    color: var(--white);
     letter-spacing: 0.3ch;
     line-height: 3.2ch;
+    font-family: var(--primary-font);
     /* padding-bottom: 6rem; */
 }
 
@@ -42,7 +43,7 @@
     /* margin-bottom: 10%; */
     font-weight: 400;
     font-size: 3rem;
-    letter-spacing: 0.3ch;
+    letter-spacing: 0.2ch;
     line-height: 3.2ch;
     max-width: 60%
 }
