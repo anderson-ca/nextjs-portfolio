@@ -68,7 +68,7 @@
     margin: 2rem 15rem 0 2rem;
 }
 
-.a {
+.accenture {
     background: purple;
     bottom: 27%;
 }
@@ -78,7 +78,7 @@
     bottom: 18%;
 }
 
-.c {
+.oracle {
     background: rgb(255, 0, 0);
     bottom: 10%;
 }
@@ -99,7 +99,7 @@
 .text_wrapper {
     display: none;
     background: rgba(255, 255, 255, 0);
-    border: solid 1px black;
+    border: solid 1px #170B28;
     margin: 5rem 15rem 0 2rem;
     padding: 4.5rem;
     font-family: var(--secondary-font);
@@ -109,6 +109,16 @@
     line-height: 3.5ch;
     color: #170B28;
     /* background-color: aqua; */
+}
+
+.arrow_wrapper {
+    transform: rotate(-28deg);
+    position: absolute;
+    bottom: 33%;
+    margin-right: 2rem;
+    right: 3%;
+    /* border: solid 2px red; */
+    display: flex
 }
 
 .text_shadow_pop_br {
