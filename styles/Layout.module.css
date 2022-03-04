@@ -9,14 +9,16 @@
     height: 99.8vh;
     width: 99.8vw;
     display: flex;
-    background-image: url("/paper-bg.svg");
+    background-image: url("/paper-bg2.svg");
+    background-size: cover;
 }
 
 .main {
     /* position: relative; */
     max-width: 1480px;
-    background-color: blue;
-    margin: 0 0 0 3%;
-    height: 98%;
+    background-color: rgba(0, 0, 255, 0);
+    border: solid 2px blue;
+    margin: 1rem 1rem 1rem 4%;
+    max-height: 98%;
     width: 98%;
 }
