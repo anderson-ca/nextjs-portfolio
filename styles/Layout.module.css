@@ -1,9 +1,22 @@
 .container {
-    overflow: hidden;
+    /* overflow: hidden; */
     /* position: relative; */
-    background: rgba(138, 221, 5, 0);
-    width: 100vw;
-    height: 100vh;
+    background: rgb(0, 0, 0);
+    /* flex-basis: 100%; */
+    /* border: solid 2px rgb(51, 255, 0); */
+    /* width: 97vw; */
+    /* height: 97vh; */
+    height: 99.8vh;
+    width: 99.8vw;
     display: flex;
-    padding: 0 1rem 1rem 0;
+    background-image: url("/paper-bg.svg");
+}
+
+.main {
+    /* position: relative; */
+    max-width: 1480px;
+    background-color: blue;
+    margin: 0 0 0 3%;
+    height: 98%;
+    width: 98%;
 }

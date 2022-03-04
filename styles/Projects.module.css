@@ -1,5 +1,53 @@
 .projects {
+    position: relative;
     height: 100%;
     width: 100%;
-    background: rgb(156, 45, 73);
+    background: #86F8FC;
+    border: solid 5px red;
+    display: flex;
+    flex-flow: row;
+    justify-content: flex-end;
+}
+
+.ul {
+    border: solid blue;
+    z-index: 2;
+    background-color: #473875;
+    display: flex;
+    flex-flow: column wrap;
+    align-items: flex-start;
+    justify-content: flex-end;
+    align-content: flex-start;
+    flex-basis: 63%;
+    /* transform: rotatex(-60deg); */
+    /* transform: rotateY(20deg); */
+    /* padding: 0.3rem; */
+    /* gap: 0.5rem; */
+}
+
+.li {
+    border: solid 0.5px rgb(145, 1, 173);
+    background-color: rgba(119, 128, 0, 0.37);
+    padding: 0.2rem;
+    font-size: 1.2rem;
+    width: 22%;
+    flex-basis: 22%;
+    /* border-radius: 5%; */
+    text-align: center;
+}
+
+.svg_wrapper {
+    border: solid 4px pink;
+    display: flex;
+    flex-direction: row;
+    background-color: #86f8fc;
+    /* position: absolute; */
+    /* left: 0; */
+    /* bottom: 0; */
+    z-index: 1;
+    /* height: 100%; */
+    /* justify-content: center; */
+    /* height: 240%;
+    width: 240%; */
+    /* transform: rotate(17deg); */
 }

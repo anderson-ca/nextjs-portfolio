@@ -34,7 +34,10 @@ const career = () => {
         </li>
       </ul>
       <div className={`${styles.arrow_wrapper}`}>
-        <Image src='/arrow.svg' alt='my face' height={'100rem'} width={'100px'} />
+        <Image src='/arrow.svg' alt='my face' height={'100rem'} width={'100rem'} />
+      </div>
+      <div className={`${styles.pencil_wrapper}`}>
+        <Image src='/pencil.svg' alt='my face' height={'300rem'} width={'300rem'} />
       </div>
     </div>
   )

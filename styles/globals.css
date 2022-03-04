@@ -23,8 +23,12 @@ body {
     font-family: var(--secondary-font);
     font-size: var(--font-size);
     color: var(--white);
-    background: rgb(36, 36, 36);
-    overflow: hidden;
+    background: rgb(255, 0, 0);
+    display: flex;
+    flex-flow: row;
+    justify-content: flex-start;
+    /* align-items: flex-end; */
+    /* overflow: hidden; */
 }
 
 *::before,
