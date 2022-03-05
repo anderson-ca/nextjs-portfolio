@@ -1,6 +1,54 @@
 .about {
-    /* border: solid 2px blue; */
-    background-color: rgb(0, 0, 0);
-    /* height: 95vh; */
+    /* border: solid 2px rgb(16, 196, 0); */
+    /* background-color: rgb(0, 0, 0); */
+    height: 100%;
     /* width: 95vw; */
+    display: flex;
+    /* flex-flow: row; */
+    justify-content: center;
+    align-items: center;
+}
+
+.faceless_btn_wrapper {
+    /* border: solid 2px rgb(114, 31, 31); */
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    height: 180px;
+    width: 180px;
+}
+
+.faceless_btn_wrapper.pressed .active {
+    /* background-color: red; */
+    display: block;
+}
+
+.faceless_btn_wrapper.pressed .inactive {
+    /* background-color: red; */
+    display: none;
+}
+
+.btn {
+    /* border: solid 2px pink; */
+    position: absolute;
+    /* display: none; */
+    top: 0;
+    left: 0;
+}
+
+.active {
+    display: none;
+}
+
+.angry {
+    display: none;
+    width: 80px;
+}
+
+.faceless_btn_wrapper:hover .angry {
+    bottom: 0;
+    left: 0;
+    transition-duration: 8s;
+    transition-delay: 2s;
+    display: block;
 }
