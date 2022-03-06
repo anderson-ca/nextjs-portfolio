@@ -1,45 +1,40 @@
 .face_btn_wrapper {
-    /* border: solid 2px rgb(114, 31, 31); */
+    border: solid 2px rgba(9, 255, 0, 0.993);
+    /* background: rgb(36, 247, 8); */
     position: relative;
-    display: flex;
-    flex-direction: row;
-    height: 180px;
-    width: 180px;
-}
-
-.face_btn_wrapper.pressed .active {
-    /* background-color: red; */
-    display: block;
-}
-
-.face_btn_wrapper.pressed .inactive {
-    /* background-color: red; */
-    display: none;
+    /* display: grid; */
+    /* flex-direction: row; */
+    /* min-height: 3rem; */
+    /* min-width: 3rem; */
+    /* height: ; */
+    /* width: 100%; */
 }
 
 .btn {
-    /* border: solid 2px pink; */
-    position: absolute;
-    /* display: none; */
+    z-index: 1;
+    display: none;
+}
+
+.pressed {
+    display: grid;
+    height: 100%;
+    width: 100%;
     top: 0;
     left: 0;
 }
 
-.active {
-    display: none;
-}
-
-.angry {
-    display: none;
-    width: 48px;
-}
-
 .face_btn_wrapper:hover .slide_in_blurred_top {
     display: block;
-    bottom: 0;
+    position: absolute;
+    /* border: solid 1px red; */
+    /* width: 1rem; */
+    height: 28%;
+    width: 28%;
+    /* z-index: 2; */
+    top: 2;
     left: 0;
-    -webkit-animation: slide_in_blurred_top 1s cubic-bezier(0.230, 1.000, 0.320, 1.000) 300ms both;
-    animation: slide_in_blurred_top 1s cubic-bezier(0.230, 1.000, 0.320, 1.000) 300ms both;
+    -webkit-animation: slide_in_blurred_top 1s cubic-bezier(0.230, 1.000, 0.320, 1.000) 150ms both;
+    animation: slide_in_blurred_top 1s cubic-bezier(0.230, 1.000, 0.320, 1.000) 150ms both;
 }
 
 

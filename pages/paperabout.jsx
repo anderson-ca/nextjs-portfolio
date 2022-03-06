@@ -25,15 +25,15 @@ const PaperAbout = () => {
           <Image src='/howdy.svg' alt='blah' height={'250px'} width={'250px'} />
         </div>
         <ul className={`${styles.ul}`}>
-          <li className={`${styles.li} ${styles.a}`}>
-            <FaceBtn />
-          </li>
+          {/* <li className={`${styles.li} ${styles.a}`}>
+            <FaceBtn btnSize={'100%'} btnDecorationSize={'15px'} />
+          </li> */}
           <li className={`${styles.li} ${styles.b}`}>
-            <FaceBtn />
+            <FaceBtn btnSize={'100%'} btnDecorationSize={'50px'} />
           </li>
-          <li className={`${styles.li} ${styles.c}`}>
-            <FaceBtn />
-          </li>
+          {/* <li className={`${styles.li} ${styles.c}`}>
+            <FaceBtn btnSize={'100%'} btnDecorationSize={'50px'} />
+          </li> */}
         </ul>
       </div>
       <div className={`${styles.section} ${styles.bottom}`}>
