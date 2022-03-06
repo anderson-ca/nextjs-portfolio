@@ -21,23 +21,26 @@ const PaperAbout = () => {
   return (
     <div className={`${styles.about}`}>
       <div className={`${styles.section} ${styles.top}`}>
-        <div className={`${styles.howdy_wrapper}`}>
-          <Image src='/howdy.svg' alt='blah' height={'250px'} width={'250px'} />
-        </div>
+        <h1 className={`${styles.title}`}>HOWDY!</h1>
         <ul className={`${styles.ul}`}>
-          {/* <li className={`${styles.li} ${styles.a}`}>
-            <FaceBtn btnSize={'100%'} btnDecorationSize={'15px'} />
-          </li> */}
-          <li className={`${styles.li} ${styles.b}`}>
-            <FaceBtn btnSize={'100%'} btnDecorationSize={'50px'} />
+          <li className={`${styles.li} ${styles.a}`}>
+            <FaceBtn btnSize={'100%'} btnDecorationSize={'100%'} />
           </li>
-          {/* <li className={`${styles.li} ${styles.c}`}>
-            <FaceBtn btnSize={'100%'} btnDecorationSize={'50px'} />
-          </li> */}
+          <li className={`${styles.li} ${styles.b}`}>
+            <FaceBtn btnSize={'100%'} btnDecorationSize={'100%'} />
+          </li>
+          <li className={`${styles.li} ${styles.c}`}>
+            <FaceBtn btnSize={'100%'} btnDecorationSize={'100%'} />
+          </li>
         </ul>
       </div>
       <div className={`${styles.section} ${styles.bottom}`}>
-        <p className={`${styles.p}`}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo eius aperiam distinctio cupiditate? Necessitatibus ipsa praesentium libero unde quasi hic eius doloribus, ab ipsam omnis deleniti recusandae perferendis sunt dolorum.</p>
+        <div className={`${styles.p}`}>
+          <q>
+            The creation of a single world comes from a huge number of fragments and chaos.
+          </q>
+          <h3 className={`${styles.h3}`}>&mdash; Hayao Miyazaki</h3>
+        </div>
         <div className={`${styles.guy_wrapper}`}>
           <Image src='/guy.svg' alt='blah' height={'250px'} width={'250px'} />
         </div>
