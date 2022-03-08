@@ -56,9 +56,31 @@
     line-height: 3.1ch;
 }
 
+
+/* .ul {
+    background-color: green;
+    border: solid 2px red;
+    width: 200px;
+    height: 100px;
+} */
+
 .li {
     position: absolute;
     display: grid;
+}
+
+.li:hover .li_text_wrapper {
+    overflow: visible;
+    display: block;
+    position: absolute;
+    border: solid 1px red;
+    font-size: 0.5rem;
+    color: black;
+    transform: translate(-780%, 46vh);
+}
+
+.li_text_wrapper {
+    display: none;
 }
 
 .a {

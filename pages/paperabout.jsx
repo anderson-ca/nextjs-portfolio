@@ -1,36 +1,29 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import FaceBtn from '../components/FaceBtn';
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect } from 'react';
 import styles from '../styles/paperAbout.module.css';
 
 const PaperAbout = () => {
 
-  const [click, setClick] = useState(false);
-
-
-  useEffect(() => {
-    console.log('my hook is working 👌')
-    console.log('is btn pressed? ', click);
-    let element = document.getElementById('#inactive');
-    console.log('my element -> ', element);
-  }, [click]);
-
-  const handleClick = () => setClick(!click);
-
   return (
     <div className={`${styles.about}`}>
       <div className={`${styles.section} ${styles.top}`}>
+
         <h1 className={`${styles.title}`}>HOWDY!</h1>
         <ul className={`${styles.ul}`}>
           <li className={`${styles.li} ${styles.a}`}>
-            <FaceBtn btnSize={'100%'} btnDecorationSize={'100%'} />
+            <FaceBtn uglyBtnName={'rick'} />
           </li>
           <li className={`${styles.li} ${styles.b}`}>
-            <FaceBtn btnSize={'100%'} btnDecorationSize={'100%'} />
+            <FaceBtn uglyBtnName={'steve'} />
+            <div className={`${styles.li_text_wrapper}`}>
+              <h3>Who am I?</h3>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit molestiae iusto, odit voluptates necessitatibus dicta consequuntur, deserunt repellat quibusdam nemo natus? Neque hic sunt maiores rerum labore ipsam, aspernatur architecto.</p>
+            </div>
           </li>
           <li className={`${styles.li} ${styles.c}`}>
-            <FaceBtn btnSize={'100%'} btnDecorationSize={'100%'} />
+            <FaceBtn uglyBtnName={'linda'} />
           </li>
         </ul>
       </div>
