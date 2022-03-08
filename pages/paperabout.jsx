@@ -1,7 +1,7 @@
 // import Link from 'next/link';
 import Image from 'next/image';
 import FaceBtn from '../components/FaceBtn';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { useAppContext } from '../context/state';
 import styles from '../styles/paperAbout.module.css';
 
@@ -10,23 +10,49 @@ import styles from '../styles/paperAbout.module.css';
 
 const PaperAbout = () => {
   const mycontext = useAppContext();
-  const [aub, setAUB] = useState({});
-  // console.log('this is my context in side paper about page ===> ', mycontext);
-  // const ugly_btn = mycontext.activeUglyButton;
-  // console.log("->", ugly_btn)
-  // setUglyButtons([...ugly_btn_list])
-  
+  const uglyRef = useRef({})
+  const sharedBtnState = mycontext.uglyBtn;
+
+  console.log('😉 about context ', sharedBtnState);
 
   useEffect(() => {
-    // console.log('you are active...')
-    // if (ugly_btn) {
-    //   console.log('you exist...', ugly_btn);
-    // } else {
-      
-    // }
-    // setAUB(ugly_btn);
-    console.log('you are active...', mycontext.activeUglyButton)
-  }, [mycontext.activeUglyButton]);
+    console.log('hover - ', sharedBtnState.hover)
+    console.log('click - ', sharedBtnState.click)
+
+    switch (sharedBtnState.name) {
+      case 'rick':
+        console.log('rick case...');
+  
+        break;
+      case 'steve':
+        console.log('steve case...');
+        
+        if (sharedBtnState.hover) {
+          // console.log('show paragraph here 🔽');
+          // uglyRef.current.className = `${styles.li_text_wrapper} ${styles.active}`;
+          // console.log(uglyRef.current.className)
+          // uglyRef.current.children[0].className = `${styles.ugly_title} ${styles.show}`;
+          // uglyRef.current.children[1].className = `${styles.ugly_paragraph}`;
+          // console.log(uglyRef.current.children[0].className)
+          // console.log(uglyRef.current.children[0])
+          // console.log(uglyRef.current.children[1].className)
+          // console.log(uglyRef.current.children[1])
+        }  else {
+          // console.log('remove paragraph now 😡');
+
+        }
+        
+        if (sharedBtnState.hover) {
+          // uglyRef.current.className = `${styles.li_text_wrapper}`;
+          // uglyRef.current.children[0].className = `${styles.ugly_title} ${styles.no_show}`;
+        }
+        break;
+      case 'linda':
+        console.log('linda case...');
+        break;
+    }
+  }, [sharedBtnState])
+
 
   return (
     <div className={`${styles.about}`}>
@@ -35,16 +61,24 @@ const PaperAbout = () => {
         <ul className={`${styles.ul}`}>
           <li className={`${styles.li} ${styles.c}`}>
             <FaceBtn uglyBtnName={'linda'} />
+            <div className={`${styles.li_text_wrapper}`}>
+              <h3>Who am I?</h3>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit molestiae iusto, odit voluptates necessitatibus dicta consequuntur, deserunt repellat quibusdam nemo natus? Neque hic sunt maiores rerum labore ipsam, aspernatur architecto.</p>
+            </div>
           </li>
           <li className={`${styles.li} ${styles.b}`}>
             <FaceBtn uglyBtnName={'steve'} />
-            <div className={`${styles.li_text_wrapper}`}>
+            <div ref={uglyRef} className={`${styles.li_text_wrapper}`}>
               <h3>Who am I?</h3>
               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit molestiae iusto, odit voluptates necessitatibus dicta consequuntur, deserunt repellat quibusdam nemo natus? Neque hic sunt maiores rerum labore ipsam, aspernatur architecto.</p>
             </div>
           </li>
           <li className={`${styles.li} ${styles.a}`}>
             <FaceBtn uglyBtnName={'rick'} />
+            <div className={`${styles.li_text_wrapper}`}>
+              <h3>Who am I?</h3>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit molestiae iusto, odit voluptates necessitatibus dicta consequuntur, deserunt repellat quibusdam nemo natus? Neque hic sunt maiores rerum labore ipsam, aspernatur architecto.</p>
+            </div>
           </li>
         </ul>
       </div>

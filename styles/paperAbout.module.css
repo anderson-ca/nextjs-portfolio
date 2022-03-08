@@ -69,7 +69,8 @@
     display: grid;
 }
 
-.li:hover .li_text_wrapper {
+
+/* .li:hover .li_text_wrapper {
     overflow: visible;
     display: block;
     position: absolute;
@@ -77,9 +78,37 @@
     font-size: 0.5rem;
     color: black;
     transform: translate(-780%, 46vh);
-}
+} */
 
 .li_text_wrapper {
+    display: none;
+}
+
+.li_text_wrapper.active {
+    overflow: visible;
+    display: block;
+    position: absolute;
+    border: solid 1px red;
+    font-size: 0.5rem;
+    color: black;
+    /* transform: translate(-780%, 46vh); */
+}
+
+.no_show {
+    display: none;
+}
+
+.show {
+    overflow: visible;
+    display: block;
+    position: absolute;
+    border: solid 1px red;
+    font-size: 1rem;
+    color: black;
+}
+
+.ugly_paragraph {
+    color: black;
     display: none;
 }
 

@@ -9,7 +9,11 @@ const initState = {
 
 export function AppWrapper({ children }) {
 
-  const [uglyBtn, setUglyButton] = useState(initState);
+  const [uglyBtn, setUglyButton] = useState({
+    'name': null,
+    'hover': false,
+    'click': false,
+  });
 
   // set ugly button
   const handleSetUglyBtn = (btnName, hover, click) => {
@@ -19,16 +23,11 @@ export function AppWrapper({ children }) {
       'click': click
     });
 
-    console.log('shared btn - ', btnName, hover, click);
-  }
-  // reset active button
-  const handleResetUglyBtn = () => {
-    setUglyButton(initState);
+    // console.log('shared btn - ', btnName, hover, click);
   }
 
   let sharedState = {
     handleSetUglyBtn,
-    handleResetUglyBtn,
     uglyBtn,
   }
 

@@ -12,17 +12,25 @@ const FaceBtn = ({ uglyBtnName }) => {
     const [hover, setHover] = useState(false);
 
     useEffect(() => {
-        console.log('👆 click - ', click)
+        // console.log('👆 click - ', click)
         uglyBtnSetter(uglyBtnName, hover, click);
 
 
     }, [click]);
 
     useEffect(() => {
-        console.log('🛸 hover - ', hover)
+        // console.log('🛸 hover - ', hover)
         uglyBtnSetter(uglyBtnName, hover, click);
 
     }, [hover]);
+
+    // clear ugly button state
+    useEffect(() => {
+        if (!hover) {
+            uglyBtnSetter(null, hover, click)
+            // console.log('🧼 scrub the state...');
+        }
+    }, [hover, click])
 
     const handleClick = () => setClick(!click);
     const handleHover = () => setHover(!hover);
