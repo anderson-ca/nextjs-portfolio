@@ -1,19 +1,40 @@
-import Link from 'next/link';
+// import Link from 'next/link';
 import Image from 'next/image';
 import FaceBtn from '../components/FaceBtn';
 import { useState, useEffect } from 'react';
+import { useAppContext } from '../context/state';
 import styles from '../styles/paperAbout.module.css';
 
+
+
+
 const PaperAbout = () => {
+  const mycontext = useAppContext();
+  const [aub, setAUB] = useState({});
+  // console.log('this is my context in side paper about page ===> ', mycontext);
+  // const ugly_btn = mycontext.activeUglyButton;
+  // console.log("->", ugly_btn)
+  // setUglyButtons([...ugly_btn_list])
+  
+
+  useEffect(() => {
+    // console.log('you are active...')
+    // if (ugly_btn) {
+    //   console.log('you exist...', ugly_btn);
+    // } else {
+      
+    // }
+    // setAUB(ugly_btn);
+    console.log('you are active...', mycontext.activeUglyButton)
+  }, [mycontext.activeUglyButton]);
 
   return (
     <div className={`${styles.about}`}>
       <div className={`${styles.section} ${styles.top}`}>
-
         <h1 className={`${styles.title}`}>HOWDY!</h1>
         <ul className={`${styles.ul}`}>
-          <li className={`${styles.li} ${styles.a}`}>
-            <FaceBtn uglyBtnName={'rick'} />
+          <li className={`${styles.li} ${styles.c}`}>
+            <FaceBtn uglyBtnName={'linda'} />
           </li>
           <li className={`${styles.li} ${styles.b}`}>
             <FaceBtn uglyBtnName={'steve'} />
@@ -22,8 +43,8 @@ const PaperAbout = () => {
               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit molestiae iusto, odit voluptates necessitatibus dicta consequuntur, deserunt repellat quibusdam nemo natus? Neque hic sunt maiores rerum labore ipsam, aspernatur architecto.</p>
             </div>
           </li>
-          <li className={`${styles.li} ${styles.c}`}>
-            <FaceBtn uglyBtnName={'linda'} />
+          <li className={`${styles.li} ${styles.a}`}>
+            <FaceBtn uglyBtnName={'rick'} />
           </li>
         </ul>
       </div>

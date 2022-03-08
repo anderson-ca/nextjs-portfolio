@@ -1,45 +1,28 @@
 import styles from '../styles/FaceBtn.module.css';
 import { useAppContext } from '../context/state';
 import { useState, useEffect, useContext } from 'react';
-import AppContext from '../context/state';
 import Image from 'next/image';
 
 const FaceBtn = ({ uglyBtnName }) => {
 
     const mycontext = useAppContext();
-    const addUglyBtn = mycontext.handleAddUglyBtn;
-    const updateClick = mycontext.handleUpdateClick;
-    const updateHover = mycontext.handleUpdateHover;
+    const uglyBtnSetter = mycontext.handleSetUglyBtn;
+
     const [click, setClick] = useState(false);
     const [hover, setHover] = useState(false);
 
     useEffect(() => {
-        const newBtn = {
-            'name': uglyBtnName,
-            'click': false,
-            'hover': false
-        }
-        addUglyBtn(newBtn)
-        console.log(mycontext.uglyButtons)
-    }, [])
+        console.log('👆 click - ', click)
+        uglyBtnSetter(uglyBtnName, hover, click);
 
-    // const {click, setClick} = useAppContext();
+
+    }, [click]);
 
     useEffect(() => {
-        console.log('my hook is working 👌')
-        console.log('is btn pressed? ', click);
-        //update click here
-        console.log('now I need to update the global click bool');
-        console.log(updateClick(uglyBtnName, !click));
+        console.log('🛸 hover - ', hover)
+        uglyBtnSetter(uglyBtnName, hover, click);
 
-    }, [click, updateClick]);
-
-    useEffect(() => {
-        console.log("hover active...");
-        console.log('now I need to update the local hover bool -> ', hover);
-        updateHover(uglyBtnName, !hover)
-
-    }, [hover, updateHover]);
+    }, [hover]);
 
     const handleClick = () => setClick(!click);
     const handleHover = () => setHover(!hover);

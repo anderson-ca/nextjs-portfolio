@@ -1,47 +1,36 @@
-import { createContext, useContext, useState } from 'react';
+import { createContext, useContext, useState, useEffect } from 'react';
 
 const AppContext = createContext();
+const initState = {
+  'name': null,
+  'hover': false,
+  'click': false,
+};
 
 export function AppWrapper({ children }) {
 
-  const [uglyButtons, setUglyButtons] = useState([]);
+  const [uglyBtn, setUglyButton] = useState(initState);
 
-  // add button
-  const handleAddUglyBtn = (newBtn) => {
-    setUglyButtons((uglyButtons) => [
-      ...uglyButtons,
-      newBtn
-    ])
-  }
-  
-  //update button
-  const handleUpdateClick = (btnName, clickState) => {
-      uglyButtons.map((uglyBtn) => {
-        if (uglyBtn.name === btnName) {
-          console.log('inside my update function ->', uglyBtn.click);
-          uglyBtn.click = clickState;
-        }
-      });
-  }
-
-  const handleUpdateHover = (btnName, hoverState) => {
-    uglyButtons.map((uglyBtn) => {
-      if (uglyBtn.name === btnName) {
-        console.log('inside my update hover function ->', uglyBtn.hover);
-        uglyBtn.hover = hoverState;
-      }
+  // set ugly button
+  const handleSetUglyBtn = (btnName, hover, click) => {
+    setUglyButton({
+      'name': btnName,
+      'hover': hover,
+      'click': click
     });
-  }
 
-  //remove button
+    console.log('shared btn - ', btnName, hover, click);
+  }
+  // reset active button
+  const handleResetUglyBtn = () => {
+    setUglyButton(initState);
+  }
 
   let sharedState = {
-    uglyButtons,
-    handleAddUglyBtn,
-    handleUpdateClick,
-    handleUpdateHover
+    handleSetUglyBtn,
+    handleResetUglyBtn,
+    uglyBtn,
   }
-
 
   return (
     <AppContext.Provider value={sharedState}>
