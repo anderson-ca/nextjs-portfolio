@@ -66,79 +66,71 @@
 
 .li {
     position: absolute;
-    display: grid;
+    /* display: grid; */
 }
 
-
-/* .li:hover .li_text_wrapper {
-    overflow: visible;
-    display: block;
-    position: absolute;
-    border: solid 1px red;
-    font-size: 0.5rem;
-    color: black;
-    transform: translate(-780%, 46vh);
-} */
-
-.li_text_wrapper {
-    display: none;
-}
-
-.li_text_wrapper.active {
-    overflow: visible;
-    display: block;
-    position: absolute;
-    border: solid 1px red;
-    font-size: 0.5rem;
-    color: black;
-    /* transform: translate(-780%, 46vh); */
-}
-
-.no_show {
+.hide {
     display: none;
 }
 
 .show {
-    overflow: visible;
     display: block;
     position: absolute;
-    border: solid 1px red;
-    font-size: 1rem;
     color: black;
 }
 
-.ugly_paragraph {
-    color: black;
-    display: none;
+.fuck {
+    border: 1px solid rgb(3, 245, 56);
+    /* position: absolute; */
+    background-color: #36454f;
+    /* top: 0; */
+    /* z-index: 2; */
 }
 
 .a {
-    /* border: solid 1px rgb(15, 128, 0); */
-    background: rgba(47, 47, 238, 0);
     top: 5%;
     right: 5.8%;
-    transform: rotate(10deg);
-    width: 4rem;
-    height: 4rem;
+    transform: rotate(12deg);
+}
+
+.a>.btn_wrapper {
+    border: solid 1px rgb(0, 255, 0);
+    background: rgba(105, 134, 97, 0.774);
+    grid-template-columns: 100%;
+    display: grid;
+    width: 8rem;
+    height: 8rem
 }
 
 .b {
-    /* border: solid 1px rgb(0, 13, 128); */
-    top: 12%;
-    right: 15%;
-    /* width: 100px; */
-    width: 10.7rem;
-    height: 10.7rem;
+    top: 19%;
+    right: 18%;
     transform: rotate(-8deg);
 }
 
+.b>.btn_wrapper {
+    border: solid 1px rgb(0, 60, 255);
+    background: rgba(91, 91, 145, 0.774);
+    grid-template-columns: 100%;
+    display: grid;
+    width: 5rem;
+    height: 5rem
+}
+
 .c {
-    /* border: solid 1px rgb(252, 235, 0); */
-    top: 32%;
-    right: 6.2%;
-    /* width: 5.2rem; */
-    transform: rotate(7deg);
-    /* width: 2.5rem; */
+    top: 42%;
+    right: 5.2%;
+    transform: rotate(-9.8deg);
+    border: solid 1px red;
+}
+
+.c>.btn_wrapper {
+    border: solid 1px rgb(255, 0, 0);
+    background: rgba(170, 102, 102, 0.774);
+    grid-template-columns: 100%;
+    display: grid;
+    width: 10.5rem;
+    height: 10.5rem
 }
 
 .p {
@@ -156,9 +148,10 @@
     line-height: 3.7ch;
 }
 
-.h3 {
+.h3,
+.p {
     margin: 0;
-    padding-top: 1.2rem;
+    padding-top: 0;
 }
 
 .guy_wrapper {

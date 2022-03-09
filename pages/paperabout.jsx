@@ -10,45 +10,59 @@ import styles from '../styles/paperAbout.module.css';
 
 const PaperAbout = () => {
   const mycontext = useAppContext();
-  const uglyRef = useRef({})
+  const uglyRef = useRef({});
   const sharedBtnState = mycontext.uglyBtn;
+  let rick = uglyRef.current['rick'];
+  let linda = uglyRef.current['linda'];
+  let steve = uglyRef.current['steve'];
 
-  console.log('😉 about context ', sharedBtnState);
+  console.log('🌟 about page state - ', sharedBtnState);
 
   useEffect(() => {
-    console.log('hover - ', sharedBtnState.hover)
-    console.log('click - ', sharedBtnState.click)
+
+
+
+    if (sharedBtnState.name) {
+      console.log('😄 active button -', sharedBtnState.name);
+      console.log('🛸 hover - ', sharedBtnState.hover);
+      console.log('👆 click - ', sharedBtnState.click);
+      // rick.className = `${styles.fuck}`;
+      // linda.className = `${styles.fuck}`;
+      // steve.className = `${styles.fuck}`;
+    } else {
+      console.log('🚫 no active button...');
+      rick.className = `${styles.hide}`;
+      linda.className = `${styles.hide}`;
+      steve.className = `${styles.hide}`;
+    }
+
 
     switch (sharedBtnState.name) {
       case 'rick':
         console.log('rick case...');
-  
+
+        rick.className = `${styles.text_wrapper} ${styles.show}`;
+        // rick.children[0].className = `${styles.fuck}`;
+        rick.children[1].className = `${styles.hide}`;
+
         break;
+
       case 'steve':
         console.log('steve case...');
-        
-        if (sharedBtnState.hover) {
-          // console.log('show paragraph here 🔽');
-          // uglyRef.current.className = `${styles.li_text_wrapper} ${styles.active}`;
-          // console.log(uglyRef.current.className)
-          // uglyRef.current.children[0].className = `${styles.ugly_title} ${styles.show}`;
-          // uglyRef.current.children[1].className = `${styles.ugly_paragraph}`;
-          // console.log(uglyRef.current.children[0].className)
-          // console.log(uglyRef.current.children[0])
-          // console.log(uglyRef.current.children[1].className)
-          // console.log(uglyRef.current.children[1])
-        }  else {
-          // console.log('remove paragraph now 😡');
 
-        }
-        
-        if (sharedBtnState.hover) {
-          // uglyRef.current.className = `${styles.li_text_wrapper}`;
-          // uglyRef.current.children[0].className = `${styles.ugly_title} ${styles.no_show}`;
-        }
+        steve.className = `${styles.text_wrapper} ${styles.show}`;
+        // steve.children[0].className = `${styles.fuck}`;
+        // steve.children[1].className = `${styles.hide}`;
+
         break;
+
       case 'linda':
         console.log('linda case...');
+
+        linda.className = `${styles.text_wrapper} ${styles.show}`;
+        // linda.children[0].className = `${styles.fuck}`;
+        linda.children[1].className = `${styles.hide}`;
+
         break;
     }
   }, [sharedBtnState])
@@ -60,23 +74,29 @@ const PaperAbout = () => {
         <h1 className={`${styles.title}`}>HOWDY!</h1>
         <ul className={`${styles.ul}`}>
           <li className={`${styles.li} ${styles.c}`}>
-            <FaceBtn uglyBtnName={'linda'} />
-            <div className={`${styles.li_text_wrapper}`}>
-              <h3>Who am I?</h3>
+            <div className={`${styles.btn_wrapper}`}>
+              <FaceBtn uglyBtnName={'linda'} />
+            </div>
+            <div ref={el => uglyRef.current['linda'] = el} className={`${styles.text_wrapper}`}>
+              <h3>Where am I from?</h3>
               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit molestiae iusto, odit voluptates necessitatibus dicta consequuntur, deserunt repellat quibusdam nemo natus? Neque hic sunt maiores rerum labore ipsam, aspernatur architecto.</p>
             </div>
           </li>
           <li className={`${styles.li} ${styles.b}`}>
-            <FaceBtn uglyBtnName={'steve'} />
-            <div ref={uglyRef} className={`${styles.li_text_wrapper}`}>
+            <div className={`${styles.btn_wrapper}`}>
+              <FaceBtn uglyBtnName={'steve'} />
+            </div>
+            <div ref={el => uglyRef.current['steve'] = el} className={`${styles.text_wrapper}`}>
               <h3>Who am I?</h3>
               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit molestiae iusto, odit voluptates necessitatibus dicta consequuntur, deserunt repellat quibusdam nemo natus? Neque hic sunt maiores rerum labore ipsam, aspernatur architecto.</p>
             </div>
           </li>
           <li className={`${styles.li} ${styles.a}`}>
-            <FaceBtn uglyBtnName={'rick'} />
-            <div className={`${styles.li_text_wrapper}`}>
-              <h3>Who am I?</h3>
+            <div className={`${styles.btn_wrapper}`}>
+              <FaceBtn uglyBtnName={'rick'} />
+            </div>
+            <div ref={el => uglyRef.current['rick'] = el} className={`${styles.text_wrapper}`}>
+              <h3>What do I do?</h3>
               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit molestiae iusto, odit voluptates necessitatibus dicta consequuntur, deserunt repellat quibusdam nemo natus? Neque hic sunt maiores rerum labore ipsam, aspernatur architecto.</p>
             </div>
           </li>
