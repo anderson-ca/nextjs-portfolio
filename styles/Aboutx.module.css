@@ -1,8 +1,8 @@
 .about {
     border: solid red 3px;
     /* position: relative; */
-    height: 100vh;
-    width: 100vw;
+    height: 100%;
+    width: 100%;
     display: flex;
     flex-flow: column;
     background-color: rgb(234, 0, 255);
