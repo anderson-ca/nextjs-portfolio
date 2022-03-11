@@ -1,4 +1,4 @@
-.about {
+.career {
     background-color: rgba(0, 0, 0, 0);
     /* border: solid 1px rgb(0, 255, 42); */
     position: relative;
@@ -85,24 +85,24 @@
 }
 
 .a {
-    bottom: 41%;
-    left: 11%;
-    /* transform: rotate(10deg); */
+    bottom: 35%;
+    right: 23%;
+    /* transform: rotate(-18deg); */
 }
 
 .a>.btn_wrapper {
     /* border: solid 0.3px rgb(0, 255, 0); */
-    background: rgba(105, 134, 97, 0);
+    background: (rgba1105, 134, 97, 0);
     grid-template-columns: 100%;
     display: grid;
-    width: 10.5rem;
-    height: 10.5rem
+    width: 13.5rem;
+    height: 13.5rem;
 }
 
 .b {
-    bottom: 2%;
-    left: 25%;
-    /* transform: rotate(8deg); */
+    bottom: 0;
+    right: 8%;
+    /* transform: rotate(-8deg); */
 }
 
 .b>.btn_wrapper {
@@ -110,14 +110,14 @@
     background: rgba(91, 91, 145, 0);
     grid-template-columns: 100%;
     display: grid;
-    width: 14.7rem;
-    height: 14.7rem
+    width: 18rem;
+    height: 18rem;
 }
 
 .c {
     bottom: 2%;
-    left: 5%;
-    /* transform: rotate(-9.8deg); */
+    right: 44%;
+    /* transform: rotate(9.8deg); */
     /* border: solid 1px red; */
 }
 
@@ -126,8 +126,8 @@
     background: rgba(170, 102, 102, 0);
     grid-template-columns: 100%;
     display: grid;
-    width: 20rem;
-    height: 20rem
+    width: 11.6rem;
+    height: 11.6rem
 }
 
 .p {

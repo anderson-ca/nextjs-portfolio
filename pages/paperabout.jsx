@@ -119,7 +119,7 @@ const PaperAbout = () => {
         </li>
       </ul>
       <div className={`${styles.bottom}`}>
-        <Image src='/about-bg-final.svg' alt='something' height={`100%`} width={`100%`} />
+        <Image src='/about-bg-alt.svg' alt='something' height={`100%`} width={`100%`} />
       </div>
     </div>
   )
