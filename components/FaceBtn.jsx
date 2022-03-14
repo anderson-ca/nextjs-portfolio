@@ -3,7 +3,7 @@ import { useAppContext } from '../context/state';
 import { useState, useEffect, useContext } from 'react';
 import Image from 'next/image';
 
-const FaceBtn = ({ uglyBtnName }) => {
+const FaceBtn = ({ uglyBtnName, uglyBtnSize }) => {
 
     const mycontext = useAppContext();
     const uglyBtnSetter = mycontext.handleSetUglyBtn;
@@ -37,15 +37,24 @@ const FaceBtn = ({ uglyBtnName }) => {
 
     return (
         <div onMouseLeave={handleHover} onMouseEnter={handleHover} onMouseDown={handleClick} onMouseUp={handleClick} className={styles.face_btn_wrapper}>
-            <div className={`${styles.btn} ${styles.slide_in_blurred_top}`}>
-                <Image src='/angry2.svg' alt='faceless btn' height={`100%`} width={`100%`} />
-            </div>
-            <div className={click ? styles.btn : `${styles.btn} ${styles.pressed}`}>
-                <Image src='/btn.svg' alt='faceless btn' height={`100%`} width={`100%`} />
-            </div>
-            <div className={click ? `${styles.btn} ${styles.pressed}` : styles.btn}>
-                <Image src='/btn-pressed.svg' alt='faceless btn' height={`100%`} width={`100%`} />
-            </div>
+            {
+                click ? (
+                    <div className={`${styles.face_btn}`}>
+                        <div className={hover ?  `${styles.btn_hover} ${styles.slide_in_blurred_top}` : styles.btn_hover}>
+                            <Image src='/angry2.svg' alt='faceless btn' height={`${uglyBtnSize / 3}px`} width={`${uglyBtnSize / 3}px`} />
+                        </div>
+                        <div className={styles.btn}>
+                            <Image src='/btn-pressed.svg' alt='faceless btn' height={`${uglyBtnSize}px`} width={`${uglyBtnSize}px`} />
+                        </div>
+                    </div>) : (<div className={`${styles.face_btn}`}>
+                        <div className={hover ?  `${styles.btn_hover} ${styles.slide_in_blurred_top}` : styles.btn_hover}>
+                            <Image src='/angry2.svg' alt='faceless btn' height={`${uglyBtnSize / 3}px`} width={`${uglyBtnSize / 3}px`} />
+                        </div>
+                        <div className={styles.btn}>
+                            <Image src='/btn.svg' alt='faceless btn' height={`${uglyBtnSize}px`} width={`${uglyBtnSize}px`} />
+                        </div>
+                    </div>)
+            }
         </div>
     )
 }
