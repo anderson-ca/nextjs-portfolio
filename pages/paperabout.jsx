@@ -94,7 +94,7 @@ const PaperAbout = () => {
           <FaceBtn uglyBtnName={'steve'} uglyBtnSize={166} />
         </li>
         <li className={`${styles.li} ${styles.rick}`}>
-          <FaceBtn uglyBtnName={'rick'} uglyBtnSize={78} />
+          <Image src='/run-btn.svg' alt='dead btn' height='200px' width='250px' />
         </li>
       </ul>
       <ul className={`${styles.mid_row}`}>
@@ -102,8 +102,7 @@ const PaperAbout = () => {
           <FaceBtn uglyBtnName={'linda'} uglyBtnSize={174} />
         </li>
         <li className={`${styles.li} ${styles.a}`}>
-            {/* <FaceBtn uglyBtnName={'linda'} uglyBtnSize={200} /> */}
-            <Image src='/dead-btn.svg' alt='dead btn' height='125px' width='145px' />
+            <Image src='/cry-btn.svg' alt='dead btn' height='125px' width='145px' />
         </li>
         <li className={`${styles.li} ${styles.b}`}>
           <FaceBtn uglyBtnName={'linda'} uglyBtnSize={185} />
