@@ -1,4 +1,5 @@
 // import Link from 'next/link';
+import angry from '../public/angry.svg';
 import Image from 'next/image';
 import FaceBtn from '../components/FaceBtn';
 import { useState, useEffect, useRef } from 'react';
@@ -91,32 +92,32 @@ const PaperAbout = () => {
 
       <ul className={`${styles.top_row}`}>
         <li className={`${styles.li} ${styles.steve}`}>
-          <FaceBtn uglyBtnName={'steve'} uglyBtnSize={166} />
+          <FaceBtn uglyBtnName={'steve'} uglyBtnSize={125} uglyBtnHoverDeco={'drop.svg'} uglyBtnEyes={'sus-eyes.svg'} />
         </li>
         <li className={`${styles.li} ${styles.rick}`}>
           <Image src='/run-btn.svg' alt='dead btn' height='200px' width='250px' />
         </li>
       </ul>
       <ul className={`${styles.mid_row}`}>
+        <li className={`${styles.li} ${styles.b}`}>
+          <Image src='/sad-btn.svg' alt='dead btn' height='100px' width='100px' />
+        </li>
         <li className={`${styles.li} ${styles.linda}`}>
-          <FaceBtn uglyBtnName={'linda'} uglyBtnSize={174} />
+          <FaceBtn uglyBtnName={'linda'} uglyBtnSize={174} uglyBtnHoverDeco={'angry2.svg'} uglyBtnEyes={'souless-eyes.svg'} />
         </li>
         <li className={`${styles.li} ${styles.a}`}>
-            <Image src='/cry-btn.svg' alt='dead btn' height='125px' width='145px' />
-        </li>
-        <li className={`${styles.li} ${styles.b}`}>
-          <FaceBtn uglyBtnName={'linda'} uglyBtnSize={185} />
+          <Image src='/cry-btn.svg' alt='dead btn' height='145px' width='145px' />
         </li>
       </ul>
       <ul className={`${styles.bottom_row}`}>
         <li className={`${styles.li} ${styles.c}`}>
-          <FaceBtn uglyBtnName={'linda'} uglyBtnSize={287} />
+          <FaceBtn uglyBtnName={'linda'} uglyBtnSize={350} uglyBtnHoverDeco={'angry.svg'} uglyBtnEyes={'furious-eyes.svg'} />
         </li>
         <li className={`${styles.li} ${styles.d}`}>
-        <Image src='/dead-btn.svg' alt='dead btn' height='225px' width='245px' />
+          <Image src={'/dead-btn.svg'} alt='dead btn' height='245px' width='245px' />
         </li>
         <li className={`${styles.li} ${styles.f}`}>
-        <Image src='/run-btn.svg' alt='dead btn' height='210px' width='345px' />
+          <Image src='/runleft-btn.svg' alt='dead btn' height='300px' width='400px' />
         </li>
       </ul>
       {/* /////////////////////////////////////////////////////////////////////////////////////////////////// */}

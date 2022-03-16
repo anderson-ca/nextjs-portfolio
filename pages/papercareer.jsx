@@ -90,32 +90,46 @@ const PaperCareer = () => {
         <div className={`${styles.career}`}>
             <ul className={`${styles.top_row}`}>
                 <li className={`${styles.li} ${styles.steve}`}>
-                    <FaceBtn uglyBtnName={'steve'} uglyBtnSize={166} />
+                    <FaceBtn uglyBtnName={'steve'} uglyBtnSize={75} uglyBtnHoverDeco={'drop.svg'} uglyBtnEyes={'kawai-eyes.svg'} />
+                </li>
+                <li className={`${styles.li} ${styles.steve}`}>
+                    <Image src='/sad-btn.svg' alt='dead btn' height='116px' width='116px' />
+                </li>
+            </ul>
+            <ul className={`${styles.top_row}`}>
+                <li className={`${styles.li} ${styles.steve}`}>
+                    <Image src='/run-btn.svg' alt='dead btn' height='200px' width='320px' />
+                </li>
+                <li className={`${styles.li} ${styles.steve}`}>
+                    <Image src='/love-btn.svg' alt='dead btn' height='160px' width='160px' />
                 </li>
                 <li className={`${styles.li} ${styles.rick}`}>
-                    <Image src='/run-btn.svg' alt='dead btn' height='200px' width='250px' />
+                    <Image src='/cute-btn.svg' alt='dead btn' height='125px' width='125px' />
                 </li>
             </ul>
             <ul className={`${styles.mid_row}`}>
                 <li className={`${styles.li} ${styles.linda}`}>
-                    <FaceBtn uglyBtnName={'linda'} uglyBtnSize={174} />
+                    <Image src='/runleft-1-btn.svg' alt='dead btn' height='150px' width='190px' />
+                </li>
+                <li className={`${styles.li} ${styles.linda}`}>
+                    <FaceBtn uglyBtnName={'linda'} uglyBtnSize={174} uglyBtnHoverDeco={'holy-shit3.svg'} uglyBtnEyes={'lazy-eyes.svg'}  />
                 </li>
                 <li className={`${styles.li} ${styles.a}`}>
                     <Image src='/cry-btn.svg' alt='dead btn' height='125px' width='145px' />
                 </li>
                 <li className={`${styles.li} ${styles.b}`}>
-                    <FaceBtn uglyBtnName={'linda'} uglyBtnSize={185} />
+                    <FaceBtn uglyBtnName={'linda'} uglyBtnSize={215} uglyBtnHoverDeco={'japanese-holy-shit.svg'} uglyBtnEyes={'sus-eyes.svg'}  />
                 </li>
             </ul>
             <ul className={`${styles.bottom_row}`}>
                 <li className={`${styles.li} ${styles.c}`}>
-                    <FaceBtn uglyBtnName={'linda'} uglyBtnSize={287} />
+                    <FaceBtn uglyBtnName={'linda'} uglyBtnSize={320} uglyBtnHoverDeco={'bakusweat.svg'} uglyBtnEyes={'nani-eyes.svg'} />
                 </li>
                 <li className={`${styles.li} ${styles.d}`}>
                     <Image src='/dead-btn.svg' alt='dead btn' height='225px' width='245px' />
                 </li>
                 <li className={`${styles.li} ${styles.f}`}>
-                    <Image src='/run-btn.svg' alt='dead btn' height='210px' width='345px' />
+                    <Image src='/run-1-btn.svg' alt='dead btn' height='300px' width='300px' />
                 </li>
             </ul>
         </div>

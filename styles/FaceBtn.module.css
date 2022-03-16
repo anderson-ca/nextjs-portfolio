@@ -16,6 +16,14 @@
     display: none;
 }
 
+.btn_eyes {
+    top: 10%;
+    left: 10%;
+    z-index: 2;
+    display: block;
+    position: absolute;
+}
+
 .face_btn_wrapper:hover .slide_in_blurred_top {
     top: 0;
     left: 0;
