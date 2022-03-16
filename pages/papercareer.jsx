@@ -90,7 +90,7 @@ const PaperCareer = () => {
         <div className={`${styles.career}`}>
             <ul className={`${styles.top_row}`}>
                 <li className={`${styles.li} ${styles.steve}`}>
-                    <FaceBtn uglyBtnName={'steve'} uglyBtnSize={75} uglyBtnHoverDeco={'drop.svg'} uglyBtnEyes={'kawai-eyes.svg'} />
+                    <FaceBtn uglyBtnName={'beth'} uglyBtnSize={75} uglyBtnHoverDeco={'drop.svg'} uglyBtnEyes={'kawai-eyes.svg'} />
                 </li>
                 <li className={`${styles.li} ${styles.steve}`}>
                     <Image src='/sad-btn.svg' alt='dead btn' height='116px' width='116px' />
@@ -112,18 +112,18 @@ const PaperCareer = () => {
                     <Image src='/runleft-1-btn.svg' alt='dead btn' height='150px' width='190px' />
                 </li>
                 <li className={`${styles.li} ${styles.linda}`}>
-                    <FaceBtn uglyBtnName={'linda'} uglyBtnSize={174} uglyBtnHoverDeco={'holy-shit3.svg'} uglyBtnEyes={'lazy-eyes.svg'}  />
+                    <FaceBtn uglyBtnName={'lionel'} uglyBtnSize={174} uglyBtnHoverDeco={'holy-shit3.svg'} uglyBtnEyes={'lazy-eyes.svg'}  />
                 </li>
                 <li className={`${styles.li} ${styles.a}`}>
                     <Image src='/cry-btn.svg' alt='dead btn' height='125px' width='145px' />
                 </li>
                 <li className={`${styles.li} ${styles.b}`}>
-                    <FaceBtn uglyBtnName={'linda'} uglyBtnSize={215} uglyBtnHoverDeco={'japanese-holy-shit.svg'} uglyBtnEyes={'sus-eyes.svg'}  />
+                    <FaceBtn uglyBtnName={'rick'} uglyBtnSize={215} uglyBtnHoverDeco={'japanese-holy-shit.svg'} uglyBtnEyes={'sus-eyes.svg'}  />
                 </li>
             </ul>
             <ul className={`${styles.bottom_row}`}>
                 <li className={`${styles.li} ${styles.c}`}>
-                    <FaceBtn uglyBtnName={'linda'} uglyBtnSize={320} uglyBtnHoverDeco={'bakusweat.svg'} uglyBtnEyes={'nani-eyes.svg'} />
+                    <FaceBtn uglyBtnName={'lucinda'} uglyBtnSize={320} uglyBtnHoverDeco={'bakusweat.svg'} uglyBtnEyes={'nani-eyes.svg'} />
                 </li>
                 <li className={`${styles.li} ${styles.d}`}>
                     <Image src='/dead-btn.svg' alt='dead btn' height='225px' width='245px' />

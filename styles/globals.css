@@ -15,6 +15,7 @@
     --font-b: 'Londrina Sketch', cursive;
     --font-c: 'Cabin Sketch', cursive;
     --font-d: 'Amatic SC', cursive;
+    --animation-time: 2.3s;
 }
 
 html {

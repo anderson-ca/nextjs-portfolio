@@ -92,7 +92,7 @@ const PaperAbout = () => {
 
       <ul className={`${styles.top_row}`}>
         <li className={`${styles.li} ${styles.steve}`}>
-          <FaceBtn uglyBtnName={'steve'} uglyBtnSize={125} uglyBtnHoverDeco={'drop.svg'} uglyBtnEyes={'sus-eyes.svg'} />
+          <FaceBtn uglyBtnName={'fry'} uglyBtnSize={125} uglyBtnHoverDeco={'drop.svg'} uglyBtnEyes={'sus-eyes.svg'} />
         </li>
         <li className={`${styles.li} ${styles.rick}`}>
           <Image src='/run-btn.svg' alt='dead btn' height='200px' width='250px' />
@@ -103,7 +103,7 @@ const PaperAbout = () => {
           <Image src='/sad-btn.svg' alt='dead btn' height='100px' width='100px' />
         </li>
         <li className={`${styles.li} ${styles.linda}`}>
-          <FaceBtn uglyBtnName={'linda'} uglyBtnSize={174} uglyBtnHoverDeco={'angry2.svg'} uglyBtnEyes={'souless-eyes.svg'} />
+          <FaceBtn uglyBtnName={'leela'} uglyBtnSize={174} uglyBtnHoverDeco={'angry2.svg'} uglyBtnEyes={'souless-eyes.svg'} />
         </li>
         <li className={`${styles.li} ${styles.a}`}>
           <Image src='/cry-btn.svg' alt='dead btn' height='145px' width='145px' />
@@ -111,7 +111,7 @@ const PaperAbout = () => {
       </ul>
       <ul className={`${styles.bottom_row}`}>
         <li className={`${styles.li} ${styles.c}`}>
-          <FaceBtn uglyBtnName={'linda'} uglyBtnSize={350} uglyBtnHoverDeco={'angry.svg'} uglyBtnEyes={'furious-eyes.svg'} />
+          <FaceBtn uglyBtnName={'morty'} uglyBtnSize={350} uglyBtnHoverDeco={'angry.svg'} uglyBtnEyes={'furious-eyes.svg'} />
         </li>
         <li className={`${styles.li} ${styles.d}`}>
           <Image src={'/dead-btn.svg'} alt='dead btn' height='245px' width='245px' />

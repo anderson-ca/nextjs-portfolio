@@ -36,10 +36,10 @@
 
 
 /**
- * ----------------------------------------
- * animation slide-in-blurred-top
- * ----------------------------------------
- */
+* ----------------------------------------
+* animation slide-in-blurred-top
+* ----------------------------------------
+*/
 
 @-webkit-keyframes slide_in_blurred_top {
     0% {
@@ -80,5 +80,61 @@
         -webkit-filter: blur(0);
         filter: blur(0);
         opacity: 1;
+    }
+}
+
+.blink_1 {
+    -webkit-animation: blink_1 0.6s both;
+    animation: blink_1 0.6s both;
+    animation-timing-function: step-start;
+    animation-delay: 4s;
+    animation-iteration-count: infinite;
+}
+
+.blink {
+    animation: blink var(--animation-time) alternate infinite;
+}
+
+
+/**
+ * ----------------------------------------
+ * animation blink_1
+ * ----------------------------------------
+ */
+
+@keyframes blink {
+    90% {
+        transform: none;
+        animation-timing-function: ease-in;
+    }
+    93% {
+        transform: translateY(15px) scaleY(0)
+    }
+    100% {
+        animation-timing-function: ease-out;
+    }
+}
+
+@-webkit-keyframes blink_1 {
+    0%,
+    50%,
+    100% {
+        opacity: 1;
+    }
+    25%,
+    75% {
+        opacity: 0;
+    }
+}
+
+@keyframes blink_1 {
+    0%,
+    50%,
+    100% {
+        opacity: 1;
+    }
+    25%,
+    75% {
+        opacity: 0;
     }
 }

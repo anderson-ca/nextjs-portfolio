@@ -1,15 +1,24 @@
 import styles from '../styles/FaceBtn.module.css';
 import { useAppContext } from '../context/state';
-import { useState, useEffect, useContext } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
 
 const FaceBtn = ({ uglyBtnName, uglyBtnSize, uglyBtnHoverDeco, uglyBtnEyes }) => {
 
     const mycontext = useAppContext();
+    const eyesRef = useRef(null);
     const uglyBtnSetter = mycontext.handleSetUglyBtn;
 
     const [click, setClick] = useState(false);
     const [hover, setHover] = useState(false);
+    const [randNumber, setRandNumber] = useState(((Math.random() * 2) + 1).toFixed(1));
+
+
+    useEffect(() => {
+        console.log('start wink...', randNumber);
+        let eyes = eyesRef.current;
+        eyes.style.setProperty('--animation-time', randNumber +'s');
+    }, []);
 
     useEffect(() => {
         // console.log('👆 click - ', click)
@@ -47,7 +56,7 @@ const FaceBtn = ({ uglyBtnName, uglyBtnSize, uglyBtnHoverDeco, uglyBtnEyes }) =>
                             <Image src='/btn-pressed.svg' alt='faceless btn' height={`${uglyBtnSize}px`} width={`${uglyBtnSize}px`} />
                         </div>
                     </div>) : (<div className={`${styles.face_btn}`}>
-                        <div className={styles.btn_eyes}>
+                        <div ref={eyesRef} className={`${styles.btn_eyes} ${styles.blink}`}>
                             <Image src={`/${uglyBtnEyes}`} alt='faceless btn' height={`${uglyBtnSize / 2}px`} width={`${uglyBtnSize / 2}px`} />
                         </div>
                         <div className={styles.btn}>
