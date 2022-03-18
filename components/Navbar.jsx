@@ -17,7 +17,7 @@ const Navbar = () => {
                     </Link>
                 </li>
                 <li className={`${styles.li}`}>
-                    <Link href='/papercareer' passHref>
+                    <Link href='/career' passHref>
                         <a className={`${styles.nav_link}`}>
                             <span className={`${styles.link_icon}`}><Image src='/job-search.png' alt='rocket icons - two tone' width={'50%'} height={'50%'} /></span>
                             <span className={`${styles.link_text}`}>Career</span>
@@ -33,7 +33,7 @@ const Navbar = () => {
                     </Link>
                 </li>
                 <li className={`${styles.li}`}>
-                    <Link href='/paperabout' passHref>
+                    <Link href='/about' passHref>
                         <a className={`${styles.nav_link}`}>
                             <span className={`${styles.link_icon}`}><Image src='/votes.png' alt='rocket icons - two tone' width={'50%'} height={'50%'} /></span>
                             <span className={`${styles.link_text}`}>About Me</span>

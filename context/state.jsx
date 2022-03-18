@@ -16,11 +16,13 @@ export function AppWrapper({ children }) {
   });
 
   // set ugly button
-  const handleSetUglyBtn = (btnName, hover, click) => {
+  const handleSetUglyBtn = (btnName, hover, click, positionX, positionY) => {
     setUglyButton({
       'name': btnName,
       'hover': hover,
-      'click': click
+      'click': click,
+      'positionX': positionX,
+      'positionY': positionY,
     });
 
     // console.log('shared btn - ', btnName, hover, click);

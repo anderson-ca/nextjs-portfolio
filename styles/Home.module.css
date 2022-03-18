@@ -1,9 +1,12 @@
 .hero {
-    background: rgba(0, 0, 255, 0);
-    position: relative;
-    /* pos */
-    height: 100%;
-    width: 100%;
+    /* background: rgba(0, 0, 255, 0); */
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    /* position: relative; */
+    height: 100vh;
+    width: 100vw;
 }
 
 .text_wrapper {
@@ -17,7 +20,7 @@
     align-items: flex-start;
     gap: 22%;
     z-index: 9;
-    border: solid 1px rgb(255, 1, 1);
+    /* border: solid 1px rgb(255, 1, 1); */
     position: absolute;
     top: 0;
     left: 0;

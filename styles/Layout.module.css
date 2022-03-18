@@ -1,13 +1,13 @@
 .container {
-    /* overflow: hidden; */
+    overflow: hidden;
     /* position: relative; */
     background: rgb(0, 0, 0);
     /* flex-basis: 100%; */
     /* border: solid 2px rgb(51, 255, 0); */
     /* width: 97vw; */
     /* height: 97vh; */
-    height: 99.8vh;
-    width: 99.8vw;
+    height: 100vh;
+    width: 100vw;
     display: flex;
     background-image: url("/paper-bg2.svg");
     background-size: cover;
@@ -15,8 +15,9 @@
 
 .main {
     /* position: relative; */
+    overflow: hidden;
     max-width: 1800px;
-    background-color: rgba(0, 0, 255, 0);
+    /* background-color: rgba(0, 0, 255, 0); */
     /* border: solid 2px blue; */
     margin: 1rem 1rem 1rem 4%;
     max-height: 98%;

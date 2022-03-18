@@ -11,11 +11,12 @@ const FaceBtn = ({ uglyBtnName, uglyBtnSize, uglyBtnHoverDeco, uglyBtnEyes }) =>
 
     const [click, setClick] = useState(false);
     const [hover, setHover] = useState(false);
+    const [position, setPosition] = useState({});
     const [randNumber, setRandNumber] = useState(((Math.random() * 2) + 1).toFixed(1));
 
 
     useEffect(() => {
-        console.log('start wink...', randNumber);
+        // console.log('start wink...', randNumber);
         let eyes = eyesRef.current;
         eyes.style.setProperty('--animation-time', randNumber +'s');
     }, []);
@@ -24,12 +25,15 @@ const FaceBtn = ({ uglyBtnName, uglyBtnSize, uglyBtnHoverDeco, uglyBtnEyes }) =>
         // console.log('👆 click - ', click)
         uglyBtnSetter(uglyBtnName, hover, click);
 
-
     }, [click]);
 
     useEffect(() => {
         // console.log('🛸 hover - ', hover)
-        uglyBtnSetter(uglyBtnName, hover, click);
+        let eyes = eyesRef.current;
+        let btnX = eyes.offsetLeft;
+        let btnY = eyes.offsetTop;
+        // console.log(btnX, btnY);
+        uglyBtnSetter(uglyBtnName, hover, click, btnX, btnY);
 
     }, [hover]);
 
