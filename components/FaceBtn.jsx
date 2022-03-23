@@ -4,22 +4,6 @@ import { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
 
 const FaceBtn = ({ uglyBtnName, uglyBtnSize, uglyBtnHoverDeco, uglyBtnEyes }) => {
-    const handleMouseEnter = () => {
-        console.log('hover baby! => ', uglyBtnName);
-        setHover(true);
-    };
-    const handleMouseLeave = () => {
-        console.log('not hovering! ', uglyBtnName);
-        setHover(false)
-    }
-    // const handleClick = () => {
-    //     setClick(!click);
-    // };
-    const handleClick = () => {
-        setClick(!click);
-        console.log('👆 click! => ', uglyBtnName);
-    };
-
     const mycontext = useAppContext();
     const eyesRef = useRef(null);
     const posRef = useRef(null);
@@ -30,6 +14,8 @@ const FaceBtn = ({ uglyBtnName, uglyBtnSize, uglyBtnHoverDeco, uglyBtnEyes }) =>
     const [click, setClick] = useState(null);
     const [randNumber, setRandNumber] = useState(((Math.random() * 2) + 1).toFixed(1));
 
+
+    // -- propagate values to shared application context.
     useEffect(() => {
         if (click !== null) {
             let eyes = eyesRef.current;
@@ -55,6 +41,20 @@ const FaceBtn = ({ uglyBtnName, uglyBtnSize, uglyBtnHoverDeco, uglyBtnEyes }) =>
             uglyBtnSetter(uglyBtnName, hover, click)
         }
     }, [click]);
+
+    // -- event handlers
+    const handleMouseEnter = () => {
+        console.log('hover baby! => ', uglyBtnName);
+        setHover(true);
+    };
+    const handleMouseLeave = () => {
+        console.log('not hovering! ', uglyBtnName);
+        setHover(false)
+    }
+    const handleClick = () => {
+        setClick(!click);
+        console.log('👆 click! => ', uglyBtnName);
+    };
 
     return (
         <div ref={posRef} onClick={handleClick} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} className={styles.face_btn_wrapper}>
