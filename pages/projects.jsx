@@ -12,95 +12,117 @@ const Projects = () => {
     const mycontext = useAppContext();
     const modalRef = useRef(null);
     const sharedBtnState = mycontext.uglyBtn;
+    const sharedModalState = mycontext.uglyModal;
 
 
-    useEffect(() => {
-        // console.log('🌟 career page state - ', ugly_text_wrapper);
-        // let rick = uglyRef.current['rick'];
-        // let linda = uglyRef.current['linda'];
-        // let steve = uglyRef.current['steve'];
-        // let ugly_text_wrapper = uglyRef.current['ugly-text'];
-        let modal = modalRef.current;
+    // useEffect(() => {
+    //     // console.log('🌟 career page state - ', ugly_text_wrapper);
+    //     // let rick = uglyRef.current['rick'];
+    //     // let linda = uglyRef.current['linda'];
+    //     // let steve = uglyRef.current['steve'];
+    //     // let ugly_text_wrapper = uglyRef.current['ugly-text'];
+    //     // let modal = modalRef.current;
+
+    //     // console.log('👆 click - ', sharedBtnState.click);
 
 
+    //     if (sharedBtnState.name) {
+    //         // console.log('😄 active button -', sharedBtnState.name);
+    //         // console.log('🎯 modal state - ', sharedModalState.name);
+            
+    //         // console.log('project page local modal -> ', modalRef.current.offsetLeft);
+            
+            
+            
+    //         // console.log('🛸 hover - ', sharedBtnState.hover);
+    //         // console.log('📉 mouse down - ', sharedBtnState.mouseDown);
+    //         // ugly_text_wrapper.className = `${styles.ugly_text_wrapper} ${styles.show}`
+    //         // rick.className = `${styles.fuck}`;
+    //         // linda.className = `${styles.fuck}`;
+    //         // steve.className = `${styles.fuck}`;
+    //     } else {
+    //         // console.log('🚫 no active button...');
+    //         // ugly_text_wrapper.className = `${styles.ugly_text_wrapper} ${styles.hide}`
+    //         // rick.className = `${styles.hide}`;
+    //         // linda.className = `${styles.hide}`;
+    //         // steve.className = `${styles.hide}`;
+    //     }
 
-        if (sharedBtnState.name) {
-            console.log('😄 active button -', sharedBtnState.name);
-            console.log('🛸 hover - ', sharedBtnState.hover);
-            console.log('👆 click - ', sharedBtnState.click);
-            // ugly_text_wrapper.className = `${styles.ugly_text_wrapper} ${styles.show}`
-            // rick.className = `${styles.fuck}`;
-            // linda.className = `${styles.fuck}`;
-            // steve.className = `${styles.fuck}`;
-        } else {
-            console.log('🚫 no active button...');
-            // ugly_text_wrapper.className = `${styles.ugly_text_wrapper} ${styles.hide}`
-            // rick.className = `${styles.hide}`;
-            // linda.className = `${styles.hide}`;
-            // steve.className = `${styles.hide}`;
-        }
 
+    //     switch (sharedBtnState.name) {
+    //         case 'beth':
+    //             // console.log('beth case...');
 
-        switch (sharedBtnState.name) {
-            case 'beth':
-                console.log('beth case...');
+    //             // rick.className = `${styles.text_wrapper} ${styles.show}`;
+    //             // rick.children[0].className = `${styles.ugly_title}`;
+    //             // rick.children[1].className = `${styles.hide}`;
+    //             modalRef.current.style.left = `${sharedModalState.x}px`;
+    //             modalRef.current.style.top = `${sharedModalState.y}px`;
+                
+    //             if (sharedBtnState.click) {
+    //                 // console.log('click...');
+    //                 // modalRef.current.style.transform = 'scale(6)'
+    //                 // console.log('project page local modal -> ', modalRef.current.style.left);
+    //                 // rick.children[1].className = `${styles.show}`;
+    //             }
 
-                // rick.className = `${styles.text_wrapper} ${styles.show}`;
-                // rick.children[0].className = `${styles.ugly_title}`;
-                // rick.children[1].className = `${styles.hide}`;
-                console.log('rick postion', sharedBtnState.positionX, sharedBtnState.positionY);
-                if (sharedBtnState.click) {
-                    console.log('click...');
-                    // rick.children[1].className = `${styles.show}`;
-                }
+    //             break;
 
-                break;
+    //         case 'rick':
+    //             // console.log('rick case...');
 
-            case 'rick':
-                console.log('rick case...');
+    //             // steve.className = `${styles.text_wrapper} ${styles.show} ${styles.btn_title}`;
+    //             // steve.children[0].className = `${styles.ugly_title}`;
+    //             // steve.children[1].className = `${styles.hide}`;
+    //             modalRef.current.style.left = `${sharedModalState.x}px`;
+    //             modalRef.current.style.top = `${sharedModalState.y}px`;
+                
+    //             if (sharedBtnState.click) {
+    //                 // console.log('click...');
+    //                 // modalRef.current.style.transform = 'scale(6)'
+    //                 // steve.children[1].className = `${styles.show}`;
+    //             }
 
-                // steve.className = `${styles.text_wrapper} ${styles.show} ${styles.btn_title}`;
-                // steve.children[0].className = `${styles.ugly_title}`;
-                // steve.children[1].className = `${styles.hide}`;
-                console.log('rick postion', sharedBtnState.positionX, sharedBtnState.positionY);
-                if (sharedBtnState.click) {
-                    console.log('click...');
-                    // steve.children[1].className = `${styles.show}`;
-                }
+    //             break;
 
-                break;
+    //         case 'lucinda':
+    //             // console.log(`${sharedBtnState.name)} case...`);
 
-            case 'lucinda':
-                // console.log(`${sharedBtnState.name)} case...`);
+    //             // linda.className = `${styles.text_wrapper} ${styles.show}`;
+    //             // linda.children[0].className = `${styles.ugly_title}`;
+    //             // linda.children[1].className = `${styles.hide}`;
+    //             // console.log(`😎 here's my modal -> ${modal}`);
+    //             modalRef.current.style.left = `${sharedModalState.x}px`;
+    //             modalRef.current.style.top = `${sharedModalState.y}px`;
+                
+    //             if (sharedBtnState.click) {
+    //                 // console.log('click...');
+    //                 // modalRef.current.style.transform = 'scale(6)'
+    //                 // linda.children[1].className = `${styles.show}`;
+    //             }
 
-                // linda.className = `${styles.text_wrapper} ${styles.show}`;
-                // linda.children[0].className = `${styles.ugly_title}`;
-                // linda.children[1].className = `${styles.hide}`;
-                // console.log(`😎 here's my modal -> ${modal}`);
-                console.log('lucinda postion', sharedBtnState.positionX, sharedBtnState.positionY);
-                if (sharedBtnState.click) {
-                    console.log('click...');
-                    // linda.children[1].className = `${styles.show}`;
-                }
+    //             break;
 
-                break;
+    //         case 'lionel':
+    //             // console.log(`${sharedBtnState.name)} case...`);
 
-            case 'lionel':
-                // console.log(`${sharedBtnState.name)} case...`);
+    //             // linda.className = `${styles.text_wrapper} ${styles.show}`;
+    //             // linda.children[0].className = `${styles.ugly_title}`;
+    //             // linda.children[1].className = `${styles.hide}`;
+    //             // console.log(`😎 here's my modal -> ${modal}`);
+    //             modalRef.current.style.left = `${sharedModalState.x}px`;
+    //             modalRef.current.style.top = `${sharedModalState.y}px`;
+    //             // modalRef.current.style.width = `${sharedModalState.width}px`;
+    //             // modalRef.current.style.height = `${sharedModalState.height}px`;
+    //             if (sharedBtnState.click) {
+    //                 // console.log('click...');
+    //                 // modalRef.current.style.transform = 'scale(6)'
+    //                 // linda.children[1].className = `${styles.show}`;
+    //             }
 
-                // linda.className = `${styles.text_wrapper} ${styles.show}`;
-                // linda.children[0].className = `${styles.ugly_title}`;
-                // linda.children[1].className = `${styles.hide}`;
-                // console.log(`😎 here's my modal -> ${modal}`);
-                console.log('lionel postion', sharedBtnState.positionX, sharedBtnState.positionY);
-                if (sharedBtnState.click) {
-                    console.log('click...');
-                    // linda.children[1].className = `${styles.show}`;
-                }
-
-                break;
-        }
-    }, [sharedBtnState])
+    //             break;
+    //     }
+    // }, [sharedBtnState])
 
 
     return (

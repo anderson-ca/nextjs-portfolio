@@ -4,52 +4,60 @@ import { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
 
 const FaceBtn = ({ uglyBtnName, uglyBtnSize, uglyBtnHoverDeco, uglyBtnEyes }) => {
+    const handleMouseEnter = () => {
+        console.log('hover baby! => ', uglyBtnName);
+        setHover(true);
+    };
+    const handleMouseLeave = () => {
+        console.log('not hovering! ', uglyBtnName);
+        setHover(false)
+    }
+    // const handleClick = () => {
+    //     setClick(!click);
+    // };
+    const handleClick = () => {
+        setClick(!click);
+        console.log('👆 click! => ', uglyBtnName);
+    };
 
     const mycontext = useAppContext();
     const eyesRef = useRef(null);
+    const posRef = useRef(null);
     const uglyBtnSetter = mycontext.handleSetUglyBtn;
+    const uglyModalSetter = mycontext.handleSetUglyModal;
 
-    const [click, setClick] = useState(false);
-    const [hover, setHover] = useState(false);
-    const [position, setPosition] = useState({});
+    const [hover, setHover] = useState(null);
+    const [click, setClick] = useState(null);
     const [randNumber, setRandNumber] = useState(((Math.random() * 2) + 1).toFixed(1));
 
-
     useEffect(() => {
-        // console.log('start wink...', randNumber);
-        let eyes = eyesRef.current;
-        eyes.style.setProperty('--animation-time', randNumber +'s');
+        if (click !== null) {
+            let eyes = eyesRef.current;
+            eyes.style.setProperty('--animation-time', randNumber + 's');
+        }
     }, []);
 
     useEffect(() => {
-        // console.log('👆 click - ', click)
-        uglyBtnSetter(uglyBtnName, hover, click);
+        if (hover === null) {
+            console.log('hover is null');
+        } else {
+            console.log("🛸 i'm hovering?", hover);
+            uglyBtnSetter(uglyBtnName, hover)
+        }
 
+    }, [hover])
+
+    useEffect(() => {
+        if (click === null) {
+            console.log('click is null');
+        } else {
+            console.log("🚀 lets get out of here...", click);
+            uglyBtnSetter(uglyBtnName, hover, click)
+        }
     }, [click]);
 
-    useEffect(() => {
-        // console.log('🛸 hover - ', hover)
-        let eyes = eyesRef.current;
-        let btnX = eyes.offsetLeft;
-        let btnY = eyes.offsetTop;
-        // console.log(btnX, btnY);
-        uglyBtnSetter(uglyBtnName, hover, click, btnX, btnY);
-
-    }, [hover]);
-
-    // clear ugly button state
-    useEffect(() => {
-        if (!hover) {
-            uglyBtnSetter(null, hover, click)
-            // console.log('🧼 scrub the state...');
-        }
-    }, [hover, click])
-
-    const handleClick = () => setClick(!click);
-    const handleHover = () => setHover(!hover);
-
     return (
-        <div onMouseLeave={handleHover} onMouseEnter={handleHover} onMouseDown={handleClick} onMouseUp={handleClick} className={styles.face_btn_wrapper}>
+        <div ref={posRef} onClick={handleClick} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} className={styles.face_btn_wrapper}>
             <div className={hover ? `${styles.btn_hover} ${styles.slide_in_blurred_top}` : styles.btn_hover}>
                 <Image src={`/${uglyBtnHoverDeco}`} alt='faceless btn' height={`${uglyBtnSize / 3}px`} width={`${uglyBtnSize / 3}px`} />
             </div>
