@@ -2,6 +2,7 @@ import '../styles/globals.css'
 import { AppWrapper } from '../context/state';
 import Layout from '../components/Layout';
 import Navbar from '../components/Navbar';
+import UglyModal from '../components/UglyModal';
 
 function MyApp({ Component, pageProps }) {
 
@@ -9,6 +10,7 @@ function MyApp({ Component, pageProps }) {
     <AppWrapper>
       <Layout>
         <Navbar />
+        <UglyModal />
         <Component {...pageProps} />
       </Layout>
     </AppWrapper>

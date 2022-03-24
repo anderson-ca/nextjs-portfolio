@@ -4,9 +4,9 @@ import { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
 
 const FaceBtn = ({ uglyBtnName, uglyBtnSize, uglyBtnHoverDeco, uglyBtnEyes }) => {
-    const mycontext = useAppContext();
     const eyesRef = useRef(null);
-    const posRef = useRef(null);
+    const btnRef = useRef(null);
+    const mycontext = useAppContext();
     const uglyBtnSetter = mycontext.handleSetUglyBtn;
     const uglyModalSetter = mycontext.handleSetUglyModal;
 
@@ -17,18 +17,18 @@ const FaceBtn = ({ uglyBtnName, uglyBtnSize, uglyBtnHoverDeco, uglyBtnEyes }) =>
 
     // -- propagate values to shared application context.
     useEffect(() => {
-        if (click !== null) {
-            let eyes = eyesRef.current;
-            eyes.style.setProperty('--animation-time', randNumber + 's');
-        }
+        // console.log("😡 this is the rand number for =====> ", randNumber);
+        let eyes = eyesRef.current;
+        eyes.style.setProperty('--animation-time', randNumber + 's');
+     
     }, []);
 
     useEffect(() => {
         if (hover === null) {
             console.log('hover is null');
         } else {
-            console.log("🛸 i'm hovering?", hover);
-            uglyBtnSetter(uglyBtnName, hover)
+            console.log("🛸 i'm hovering?", hover, click);
+            uglyBtnSetter(uglyBtnName, hover, click)
         }
 
     }, [hover])
@@ -40,6 +40,13 @@ const FaceBtn = ({ uglyBtnName, uglyBtnSize, uglyBtnHoverDeco, uglyBtnEyes }) =>
             console.log("🚀 lets get out of here...", click);
             uglyBtnSetter(uglyBtnName, hover, click)
         }
+
+        if (click) {
+            btnRef.current.className = `${styles.face_btn_wrapper} ${styles.active_btn}`;
+        } else if (!click) {
+            btnRef.current.className = `${styles.face_btn_wrapper}`;
+        }
+
     }, [click]);
 
     // -- event handlers
@@ -57,7 +64,7 @@ const FaceBtn = ({ uglyBtnName, uglyBtnSize, uglyBtnHoverDeco, uglyBtnEyes }) =>
     };
 
     return (
-        <div ref={posRef} onClick={handleClick} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} className={styles.face_btn_wrapper}>
+        <div ref={btnRef} onClick={handleClick} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} className={styles.face_btn_wrapper}>
             <div className={hover ? `${styles.btn_hover} ${styles.slide_in_blurred_top}` : styles.btn_hover}>
                 <Image src={`/${uglyBtnHoverDeco}`} alt='faceless btn' height={`${uglyBtnSize / 3}px`} width={`${uglyBtnSize / 3}px`} />
             </div>

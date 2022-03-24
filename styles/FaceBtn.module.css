@@ -3,6 +3,10 @@
     position: relative;
 }
 
+.active_btn {
+    z-index: 4;
+}
+
 .face_btn {
     display: grid;
 }

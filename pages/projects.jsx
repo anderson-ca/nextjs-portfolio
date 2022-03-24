@@ -13,7 +13,20 @@ const Projects = () => {
     const modalRef = useRef(null);
     const sharedBtnState = mycontext.uglyBtn;
     const sharedModalState = mycontext.uglyModal;
+    const [isModalActive, setIsModalActive] = useState(null);
 
+    useEffect(() => {
+        console.log('inside projects page....');
+        console.log('this is the click state for the shared btn -> ', sharedBtnState.click);
+
+        if (sharedBtnState.click && sharedBtnState.name === 'lucinda') {
+            console.log('🧙‍♂️ fly you fools! ', sharedBtnState.name);
+            // I have to pass the data cuopled to this ugly btn instatiation ot the shared application context.
+            
+
+        }
+
+    }, [sharedBtnState]);
 
     // useEffect(() => {
     //     // console.log('🌟 career page state - ', ugly_text_wrapper);
@@ -29,11 +42,11 @@ const Projects = () => {
     //     if (sharedBtnState.name) {
     //         // console.log('😄 active button -', sharedBtnState.name);
     //         // console.log('🎯 modal state - ', sharedModalState.name);
-            
+
     //         // console.log('project page local modal -> ', modalRef.current.offsetLeft);
-            
-            
-            
+
+
+
     //         // console.log('🛸 hover - ', sharedBtnState.hover);
     //         // console.log('📉 mouse down - ', sharedBtnState.mouseDown);
     //         // ugly_text_wrapper.className = `${styles.ugly_text_wrapper} ${styles.show}`
@@ -58,7 +71,7 @@ const Projects = () => {
     //             // rick.children[1].className = `${styles.hide}`;
     //             modalRef.current.style.left = `${sharedModalState.x}px`;
     //             modalRef.current.style.top = `${sharedModalState.y}px`;
-                
+
     //             if (sharedBtnState.click) {
     //                 // console.log('click...');
     //                 // modalRef.current.style.transform = 'scale(6)'
@@ -76,7 +89,7 @@ const Projects = () => {
     //             // steve.children[1].className = `${styles.hide}`;
     //             modalRef.current.style.left = `${sharedModalState.x}px`;
     //             modalRef.current.style.top = `${sharedModalState.y}px`;
-                
+
     //             if (sharedBtnState.click) {
     //                 // console.log('click...');
     //                 // modalRef.current.style.transform = 'scale(6)'
@@ -94,7 +107,7 @@ const Projects = () => {
     //             // console.log(`😎 here's my modal -> ${modal}`);
     //             modalRef.current.style.left = `${sharedModalState.x}px`;
     //             modalRef.current.style.top = `${sharedModalState.y}px`;
-                
+
     //             if (sharedBtnState.click) {
     //                 // console.log('click...');
     //                 // modalRef.current.style.transform = 'scale(6)'
@@ -127,9 +140,6 @@ const Projects = () => {
 
     return (
         <div className={`${styles.projects}`}>
-            <div ref={modalRef} className={`${styles.modal}`}>
-
-            </div>
             <ul className={`${styles.top_row}`}>
                 <li className={`${styles.li} ${styles.a}`}>
                     <FaceBtn uglyBtnName={'beth'} uglyBtnSize={75} uglyBtnHoverDeco={'drop.svg'} uglyBtnEyes={'kawai-eyes.svg'} />

@@ -1,8 +1,9 @@
 .modal {
-    background: red;
+    border: solid 2px red;
+    /* border-radius: 100%; */
     position: absolute;
-    height: 80px;
-    width: 80px;
+    height: 15px;
+    width: 100vw;
     top: 0;
     left: 0;
 }

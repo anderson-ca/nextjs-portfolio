@@ -1,45 +1,48 @@
 import { createContext, useContext, useState, useEffect } from 'react';
 
 const AppContext = createContext();
-const initState = {
-  'name': null,
-  'hover': false,
-  'click': false,
-  'mouseDown': false
-};
 
 export function AppWrapper({ children }) {
 
   const [uglyBtn, setUglyButton] = useState({
-    'name': null,
-    'hover': false,
-    'mouseDown': false,
-    'click': false,
+    name: null,
+    hover: null,
+    click: null,
   });
 
   const [uglyModal, setUglyModal] = useState({
-    'name': null,
-    'x': 0,
-    'y': 0,
+    name: null,
+    title: null,
+    description: null,
+    items: [],
+    images: [],
   })
 
   // set ugly button
-  const handleSetUglyBtn = (btnName = null, hover = true, click = false) => {
+  const handleSetUglyBtn = (name = null, hover = null, click = null) => {
     setUglyButton({
-      'name': btnName,
-      'hover': hover,
-      'click': click,
+      name,
+      hover,
+      click,
     });
 
-    console.log('shared btn - ', btnName, hover, click);
+    console.log('shared btn - ', name, hover, click);
   }
 
   // set ugly button
-  const handleSetUglyModal = (btnName, positionX, positionY) => {
+  const handleSetUglyModal = (name = null, title = null, description = null, items = null, images = null) => {
+    if (items === null) {
+      items = [];
+    }
+    if (images === null) {
+      images = [];
+    }
     setUglyModal({
-      'name': btnName,
-      'x': positionX,
-      'y': positionY
+      name,
+      title,
+      description,
+      items,
+      images,
     });
 
     // console.log('🎯 shared modal -> ', btnName, positionX, positionY);
