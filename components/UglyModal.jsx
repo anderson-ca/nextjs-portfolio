@@ -9,68 +9,40 @@ const UglyModal = () => {
     const mycontext = useAppContext();
     const sharedBtnState = mycontext.uglyBtn;
 
+    const handleHoverAnimation = (sharedBtn) => {
+        if (sharedBtn.hover) {
+            modalRef.current.className = `${styles.show}`;
+            hoverRef.current.className = `${styles.hover_mode}`
+        } else if (!sharedBtn.hover && sharedBtn.hover !== null) {
+            hoverRef.current.className = `${styles.hide}`;
+        } else {
+            hoverRef.current.className = `${styles.hide}`;
+        }
+    }
 
-    const checkBtnState = (myClass, click, truetie, falsie, defaultie) => {
-        if (hover) {
-
-            if (click) {
-                myClass = `${truetie}`
-            } else if ((!click && click !== null)) {
-                myClass = `${falsie}`
-            } else {
-                myClass = `${defaultie}`
-            }
-
-        } else if (!hover && hover !== null) {
-
+    const handleClickAnimation = (sharedBtn) => {
+        if (sharedBtn.click) {
+            modalRef.current.className = `${styles.show}`;
+            clickRef.current.className = `${styles.scale_in_ver_top}`;
+        } else if (!sharedBtn.click && sharedBtn.click !== null) {
+            modalRef.current.className = `${styles.show}`;
+            clickRef.current.className = `${styles.fade_out_top}`;
+        } else {
+            clickRef.current.className = `${styles.hide}`;
         }
 
     }
 
     useEffect(() => {
-        if (sharedBtnState.click) {
-            console.log('🌟  inside ugly modal click!', modalRef.current.classList);
-            modalRef.current.className = `${styles.scale_in_ver_top}`;
-        } else if (!sharedBtnState.click && sharedBtnState.click !== null) {
-            console.log('🧼 inside ugly modal click!', modalRef.current);
-            modalRef.current.className = `${styles.fade_out_top}`;
-        } else {
-            modalRef.current.className = `${styles.ugly_modal}`;
-        }
+        modalRef.current.className = `${styles.hide}`;
 
-        switch (sharedBtnState.name) {
-            case 'lucinda':
-                console.log(sharedBtnState.name, ' here... 👧', modalRef.current.className);
-                console.log("🤠 yea-yea!", modalRef.current.className);
-                // if (sharedBtnState.hover) {
-                //     modalRef.current.className = `${styles.hover_mode}`;
-        
-                // } else if (!sharedBtnState.hover && sharedBtnState.hover !== null) {
-                //     modalRef.current.className = `${styles.ugly_modal}`;
-                // }
-
-                break;
-
-            case 'beth':
-                console.log(sharedBtnState.name, ' here... 👱‍♀️');
-                break;
-
-            case 'rick':
-                console.log(sharedBtnState.name, ' here... 🧓');
-                break;
-
-            case 'lionel':
-                console.log(sharedBtnState.name, ' here... 🎍');
-                break;
-
-
-        }
-
+        handleHoverAnimation(sharedBtnState);
+        handleClickAnimation(sharedBtnState);
 
     }, [sharedBtnState]);
 
     return (
-        <div ref={modalRef} className={`${styles.ugly_modal}`}>
+        <div ref={modalRef} className={`${styles.ugly_modal_wrapper}`}>
             <div ref={hoverRef} className={`${styles.ugly_hover}`}></div>
             <div ref={clickRef} className={`${styles.ugly_click}`}></div>
         </div>
