@@ -17,18 +17,21 @@ const FaceBtn = ({ uglyBtnName, uglyBtnSize, uglyBtnHoverDeco, uglyBtnEyes }) =>
 
     // -- propagate values to shared application context.
     useEffect(() => {
-        // console.log("😡 this is the rand number for =====> ", randNumber);
         let eyes = eyesRef.current;
         eyes.style.setProperty('--animation-time', randNumber + 's');
-     
+
     }, []);
 
     useEffect(() => {
         if (hover === null) {
             console.log('hover is null');
         } else {
-            console.log("🛸 i'm hovering?", hover, click);
-            uglyBtnSetter(uglyBtnName, hover, click)
+            console.log('btn position ----> ', btnRef.current.offsetTop);
+            console.log('btn position ----> ', btnRef.current.offsetLeft);
+
+
+
+            uglyBtnSetter(uglyBtnName, hover, click, btnRef.current.offsetLeft, btnRef.current.offsetTop);
         }
 
     }, [hover])
@@ -37,7 +40,6 @@ const FaceBtn = ({ uglyBtnName, uglyBtnSize, uglyBtnHoverDeco, uglyBtnEyes }) =>
         if (click === null) {
             console.log('click is null');
         } else {
-            console.log("🚀 lets get out of here...", click);
             uglyBtnSetter(uglyBtnName, hover, click)
         }
 
@@ -51,16 +53,13 @@ const FaceBtn = ({ uglyBtnName, uglyBtnSize, uglyBtnHoverDeco, uglyBtnEyes }) =>
 
     // -- event handlers
     const handleMouseEnter = () => {
-        console.log('hover baby! => ', uglyBtnName);
         setHover(true);
     };
     const handleMouseLeave = () => {
-        console.log('not hovering! ', uglyBtnName);
         setHover(false)
     }
     const handleClick = () => {
         setClick(!click);
-        console.log('👆 click! => ', uglyBtnName);
     };
 
     return (

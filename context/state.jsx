@@ -8,6 +8,8 @@ export function AppWrapper({ children }) {
     name: null,
     hover: null,
     click: null,
+    x: null,
+    y: null,
   });
 
   const [uglyModal, setUglyModal] = useState({
@@ -19,11 +21,13 @@ export function AppWrapper({ children }) {
   })
 
   // set ugly button
-  const handleSetUglyBtn = (name = null, hover = null, click = null) => {
+  const handleSetUglyBtn = (name = null, hover = null, click = null, x = null, y = null) => {
     setUglyButton({
       name,
       hover,
       click,
+      x,
+      y
     });
 
     console.log('shared btn - ', name, hover, click);
