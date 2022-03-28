@@ -1,7 +1,8 @@
-import styles from '../styles/UglyModal.module.css';
 import { useWindowDimensions } from '../hooks/useWindowDimension';
+import styles from '../styles/UglyModal.module.css';
 import { useState, useEffect, useRef } from 'react';
 import { useAppContext } from '../context/state';
+import Image from 'next/image';
 
 const UglyModal = () => {
     const { width, height } = useWindowDimensions();
@@ -13,22 +14,22 @@ const UglyModal = () => {
 
     const handleHoverAnimation = (sharedBtn) => {
 
-        console.log('😄 btn position -> ', sharedBtn.x, sharedBtn.y);
-        console.log('window height--> ', height);
-        console.log('window width --> ', width);
+        // console.log('😄 btn position -> ', sharedBtn.x, sharedBtn.y);
+        // console.log('window height--> ', height);
+        // console.log('window width --> ', width);
 
 
 
         if (sharedBtn.hover) {
             modalRef.current.className = `${styles.show}`;
-            hoverRef.current.className = `${styles.hover_mode}`
+            hoverRef.current.className = `${styles.hover_mode}`;
 
-            // place btn in quadrant
+            // place modal in quadrant
             if (sharedBtn.x > (width / 2)) {
-                hoverRef.current.classList.add(`${styles.left}`)
-        
+                hoverRef.current.classList.add(`${styles.left}`);
+
             } else if (sharedBtn.x <= (width / 2)) {
-                hoverRef.current.classList.add(`${styles.right}`)
+                hoverRef.current.classList.add(`${styles.right}`);
             }
 
             if (sharedBtn.y > (height / 2)) {
@@ -57,7 +58,6 @@ const UglyModal = () => {
     useEffect(() => {
         modalRef.current.className = `${styles.hide}`;
 
-
         handleHoverAnimation(sharedBtnState);
         handleClickAnimation(sharedBtnState);
 
@@ -65,7 +65,16 @@ const UglyModal = () => {
 
     return (
         <div ref={modalRef} className={`${styles.ugly_modal_wrapper}`}>
-            <div ref={hoverRef} className={`${styles.ugly_hover}`}></div>
+            <div ref={hoverRef}>
+                <div className={`${styles.image_wrapper}`}>
+                    <Image src='/angry.svg' alt='dialogue box' height='50px' width='50px' />
+                </div>
+                <div className={`${styles.text_wrapper}`}>
+                    <p>
+                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sint velit, autem numquam reprehenderit, recusandae suscipit sed sunt a doloribus rerum excepturi ab facilis nesciunt voluptates animi! Esse pariatur atque excepturi?
+                    </p>
+                </div>
+            </div>
             <div ref={clickRef} className={`${styles.ugly_click}`}></div>
         </div>
     )
