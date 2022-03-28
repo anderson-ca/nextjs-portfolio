@@ -10,10 +10,28 @@
     border: solid 1px red;
     display: block;
     position: absolute;
-    top: 5;
-    left: 5;
     width: 3rem;
     height: 3rem;
+}
+
+.right {
+    background-color: blue;
+    right: 5%;
+}
+
+.left {
+    background-color: red;
+    left: 5%;
+}
+
+.top {
+    border: solid 4px black;
+    top: 5%;
+}
+
+.bottom {
+    border: solid 4px white;
+    bottom: 5%;
 }
 
 .active_ugly_modal {

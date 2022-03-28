@@ -12,13 +12,33 @@ const UglyModal = () => {
     const sharedBtnState = mycontext.uglyBtn;
 
     const handleHoverAnimation = (sharedBtn) => {
-        console.log('btn position -> ');
+
+        console.log('😄 btn position -> ', sharedBtn.x, sharedBtn.y);
         console.log('window height--> ', height);
         console.log('window width --> ', width);
-        
+
+
+
         if (sharedBtn.hover) {
             modalRef.current.className = `${styles.show}`;
             hoverRef.current.className = `${styles.hover_mode}`
+
+            // place btn in quadrant
+            if (sharedBtn.x > (width / 2)) {
+                hoverRef.current.classList.add(`${styles.left}`)
+        
+            } else if (sharedBtn.x <= (width / 2)) {
+                hoverRef.current.classList.add(`${styles.right}`)
+            }
+
+            if (sharedBtn.y > (height / 2)) {
+                hoverRef.current.classList.add(`${styles.top}`);
+
+            } else if (sharedBtn.y <= (height / 2)) {
+                hoverRef.current.classList.add(`${styles.bottom}`);
+            }
+
+
         } else if (!sharedBtn.hover && sharedBtn.hover !== null) {
             hoverRef.current.className = `${styles.hide}`;
         }
@@ -36,7 +56,7 @@ const UglyModal = () => {
 
     useEffect(() => {
         modalRef.current.className = `${styles.hide}`;
-        
+
 
         handleHoverAnimation(sharedBtnState);
         handleClickAnimation(sharedBtnState);
